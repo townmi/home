@@ -49,7 +49,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;将来的打算，`angular2`目前测试完成差不多了。打算PC端以`angular2`为主开发系统级的应用。移动端目前还是看好`react.js`，当然，遇到牛逼的团队，可以一起学习、写写这类MV*的框架。
 
 ### 个人介绍
-  &nbsp;&nbsp;&nbsp;&nbsp;**宅**、**wower**、****
+  &nbsp;&nbsp;&nbsp;&nbsp;**宅**、**wower**、**:water_buffalo:**
   
 ## 理想团队
 

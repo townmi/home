@@ -5,6 +5,7 @@
   + 手机：`18505102468`
   + 年龄：26
   + 邮箱：towne766127696@gmail.com
+  + 期望工作地点：上海**（目前人在北京，预计21号可以到上海）**
 
 ### 教育经历
   + 2008-2012&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;常熟理工学院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;材料科学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本科

@@ -18,10 +18,10 @@
 
   &nbsp;&nbsp;1.投米网（2014.06-2014-12） 
   
-  &nbsp;&nbsp;&nbsp;&nbsp;+ 使用技术：jquery、原生Javascript+css。 
-      
+  + 使用技术：jquery、原生Javascript+css。 
+  + 
   &nbsp;&nbsp;&nbsp;&nbsp;+ 项目职责：参与投米网的活动页面制作、负责部分营销页面的切图和投米网的部分子页面重构。 
-      
+
   &nbsp;&nbsp;&nbsp;&nbsp;+ 项目描述：刚开始参与投米网的建设初期，投米网的前端已经上线。基本是负责运营的活动页面，改造投米网的部分交互；修改子页面的BUG等等；参与开发了投米网WAP版的建设，WAP版使用了jquery.mobile插件已经样式。扩展了投米网用户中心的礼券管理和交易记录，编写插件针对表格数据采用AJAX无刷新获取、加入分页等功能。 
       
   &nbsp;&nbsp;2.星火网（2014.07-至今） 

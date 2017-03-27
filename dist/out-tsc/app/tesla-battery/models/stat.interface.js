@@ -1,0 +1,1 @@
+//# sourceMappingURL=/Users/townmi/github/home/src/app/tesla-battery/models/stat.interface.js.map

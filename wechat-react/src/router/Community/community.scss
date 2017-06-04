@@ -1,0 +1,43 @@
+.banner {
+    position: relative;
+    padding-bottom: 44%;
+}
+.news {
+    line-height: 42px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    span {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: left;
+        padding-left: 10px;
+    }
+    .link {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: right;
+        padding-right: 10px;
+    }
+}
+.news-timeLine {
+    height: 66px;
+    box-sizing: border-box;
+    // padding-top: 6px;
+    padding-left: 20px;
+}
+.section {
+    margin-top: 10px;
+    h3 {
+        line-height: 1.5em;
+        padding: 0 10px;
+        font-size: 16px;
+    }
+    .message-cell {
+        padding: 0 10px;
+        margin: 10px 0;
+    }
+}

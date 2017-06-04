@@ -1,0 +1,23 @@
+// Ionicons Icons
+// --------------------------
+
+.ionicons,
+.#{$ionicons-prefix}community:before,
+.#{$ionicons-prefix}community-active:before,
+.#{$ionicons-prefix}index:before,
+.#{$ionicons-prefix}index-active:before,
+.#{$ionicons-prefix}list:before,
+.#{$ionicons-prefix}list-active:before,
+.#{$ionicons-prefix}user:before,
+.#{$ionicons-prefix}user-active:before
+{
+  @extend .ion;
+}
+.#{$ionicons-prefix}community:before { content: $ionicon-var-community; }
+.#{$ionicons-prefix}community-active:before { content: $ionicon-var-community-active; }
+.#{$ionicons-prefix}index:before { content: $ionicon-var-index; }
+.#{$ionicons-prefix}index-active:before { content: $ionicon-var-index-active; }
+.#{$ionicons-prefix}list:before { content: $ionicon-var-list; }
+.#{$ionicons-prefix}list-active:before { content: $ionicon-var-list-active; }
+.#{$ionicons-prefix}user:before { content: $ionicon-var-user; }
+.#{$ionicons-prefix}user-active:before { content: $ionicon-var-user-active; }

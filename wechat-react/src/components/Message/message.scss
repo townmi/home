@@ -1,0 +1,40 @@
+.card-message-top {
+    height: 60px;
+    position: relative;
+    .avator-box {
+        float: left;
+    }
+    .btn-box {
+        float: right;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+    }
+}
+.card-message-content {
+    h4 {
+        line-height: 1.5em;
+        font-size: 14px;
+    }
+    .img-single {
+        margin: 10px 0;
+        img {
+            width: 100%;
+        }
+    }
+    .imgs {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .img-single {
+            box-sizing: border-box;
+            padding: 0 5px;
+            margin: 5px 0;
+            width: 33.3%;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2017-6-1: Created with FontForge (http://fontforge.org)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170104 at Thu Jun  1 17:36:51 2017
+ By harry
+Copyright (c) 2017, harry
+</metadata>
+<defs>
+<font id="Ionicons" horiz-adv-x="546" >
+  <font-face 
+    font-family="Ionicons"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="-0.35438 -65 620.105 448"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+F138-F14E"
+  />
+    <missing-glyph />
+    <glyph glyph-name="ion-community-active" unicode="&#xf138;" horiz-adv-x="620" 
+d="M340 121c-58 -35 -157 -81 -221 -104c-38 41 -68 118 -68 174c0 141 115 256 256 256c103 0 213 -80 244 -178c-54 -47 -148 -113 -211 -148zM353 99c60 34 151 98 204 142c3 -14 5 -36 5 -50c0 -141 -114 -256 -255 -256c-52 0 -127 28 -167 62c61 23 157 69 213 102z
+M0 3c-2 10 26 49 54 76c9 -20 27 -49 41 -66c-47 -14 -86 -18 -95 -10zM620 367c2 -10 -25 -50 -53 -77c-9 20 -28 49 -42 66c47 14 86 19 95 11z" />
+    <glyph glyph-name="ion-community" unicode="&#xf13b;" horiz-adv-x="597" 
+d="M65 192c0 129 104 234 233 234s234 -105 234 -234s-105 -234 -234 -234s-233 105 -233 234zM42 192c0 -141 115 -256 256 -256s256 115 256 256s-115 256 -256 256s-256 -115 -256 -256zM71 126l-7 8s-92 -73 -56 -122c32 -43 230 19 367 104c148 91 245 203 216 249
+c-28 44 -114 10 -114 10l4 -11l3 -11c4 1 75 21 88 0c12 -18 -54 -122 -209 -218c-143 -89 -324 -127 -337 -110c-18 24 49 89 53 93z" />
+    <glyph glyph-name="ion-index-active" unicode="&#xf13c;" 
+d="M273 448l90 -161l183 -35l-127 -134l23 -182l-169 78l-169 -78l23 182l-127 134l183 35l90 161z" />
+    <glyph glyph-name="ion-index" unicode="&#xf145;" 
+d="M419 118l23 -182l-169 78l-169 -78l23 182l-127 134l183 35l90 161l90 -161l183 -35l-127 -134v0zM348 267l-75 135l-75 -135l-152 -30l106 -113l-20 -154l141 66l141 -66l-20 154l107 113l-153 30v0z" />
+    <glyph glyph-name="ion-list-active" unicode="&#xf146;" horiz-adv-x="421" 
+d="M0 -64v466h57v-22h45v68h217v-68h45v22h57v-466h-421zM297 425h-173v-45h24v22h125v-22h24v45zM330 266h-239v-23h239v23zM330 186h-239v-22h239v22zM330 107h-159v-23h159v23z" />
+    <glyph glyph-name="ion-list" unicode="&#xf14c;" horiz-adv-x="421" 
+d="M0 -64v466h57v-22h-35v-421h377v421h-35v22h57v-466h-421zM159 107h171v-23h-171v23zM80 186h250v-22h-250v22zM80 266h250v-23h-250v23zM148 380v22h125v-22h-125zM297 425h-173v-45h-22v68h217v-68h-22v45z" />
+    <glyph glyph-name="ion-user-active" unicode="&#xf14d;" horiz-adv-x="512" 
+d="M443 17c-33 59 -104 104 -187 104s-154 -45 -187 -104c-43 46 -69 107 -69 175c0 141 115 256 256 256s256 -115 256 -256c0 -68 -26 -129 -69 -175zM262 391c-65 0 -118 -52 -118 -117s53 -118 118 -118s118 53 118 118s-53 117 -118 117zM262 180c-52 0 -95 42 -95 94
+s43 94 95 94s94 -42 94 -94s-42 -94 -94 -94v0zM91 4c29 48 91 94 165 94s136 -46 165 -94l18 9c-47 -48 -111 -77 -183 -77s-137 29 -183 77z" />
+    <glyph glyph-name="ion-user" unicode="&#xf14e;" horiz-adv-x="512" 
+d="M256 448c141 0 256 -115 256 -256s-115 -256 -256 -256s-256 115 -256 256s115 256 256 256zM256 -41c129 0 233 104 233 233s-104 233 -233 233s-233 -104 -233 -233s104 -233 233 -233zM256 118h3c65 0 145 -45 178 -102h-21c-28 47 -89 79 -160 79s-132 -32 -160 -79
+h-21c33 57 113 102 178 102h3zM262 152c-63 0 -114 51 -114 114s51 114 114 114s113 -51 113 -114s-50 -114 -113 -114zM262 357c-50 0 -91 -41 -91 -91s41 -91 91 -91s91 41 91 91s-41 91 -91 91z" />
+  </font>
+</defs></svg>

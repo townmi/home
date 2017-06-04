@@ -1,0 +1,39 @@
+// :global(.transitionWrapper-enter) {
+//     opacity: 0.01;
+//     transition: opacity 30000ms ease-in;
+// }
+ 
+// :global(.transitionWrapper-enter.transitionWrapper-enter-active) {
+//     opacity: 1;
+// }
+ 
+// :global(.transition-leave) {
+//     opacity: 1;
+//     transition: opacity 30000ms ease-in;
+// }
+ 
+// :global(.transition-leave.transition-leave-active) {
+//     opacity: 0;
+// }
+ .app {
+     padding-bottom: 54px;
+ }
+.transition-enter {
+    position: absolute;
+    opacity: 0.01;
+    transition: .5s opacity ease-in-out;
+}
+
+.transition-enter.transition-enter-active {
+    opacity: 1;
+}
+
+.transition-leave {
+    position: absolute;
+    opacity: 1;
+    transition: .5s opacity ease-in-out;
+}
+
+.transition-leave.transition-leave-active {
+    opacity: 0.01;
+}

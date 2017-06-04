@@ -1,0 +1,40 @@
+{
+  "build_hash": "a2c6f31123a3cc8385d45bf46c5dde82",
+  "prefix": "ion-",
+  "version": "2.0.1",
+  "name": "Ionicons",
+  "icons": [
+    {
+      "code": "0xf13b",
+      "name": "community"
+    },
+    {
+      "code": "0xf138",
+      "name": "community-active"
+    },
+    {
+      "code": "0xf145",
+      "name": "index"
+    },
+    {
+      "code": "0xf13c",
+      "name": "index-active"
+    },
+    {
+      "code": "0xf14c",
+      "name": "list"
+    },
+    {
+      "code": "0xf146",
+      "name": "list-active"
+    },
+    {
+      "code": "0xf14e",
+      "name": "user"
+    },
+    {
+      "code": "0xf14d",
+      "name": "user-active"
+    }
+  ]
+}

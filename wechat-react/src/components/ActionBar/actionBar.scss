@@ -1,0 +1,12 @@
+.action-bar {
+  position: fixed;
+  right: 6%;
+  bottom: calc(2% + 54px);
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .5);
+  background-color: #d42c3a;
+}

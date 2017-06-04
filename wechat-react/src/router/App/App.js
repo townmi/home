@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { IndexLink, Link, withRouter, hashHistory } from 'react-router';
+import React, {Component} from 'react';
+import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import TabBar from '../../components/TabBar';
 import './app.scss';

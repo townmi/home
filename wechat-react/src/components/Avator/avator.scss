@@ -1,42 +1,64 @@
 .avator-box {
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-	align-items: center;
-    &.normal {
-        .avator {
-            width: 54px;
-            height: 54px;
-        }
-    }
-    &.small {
-        .avator {
-            width: 42px;
-            height: 42px;
-        }
-        .profile {
-            margin-left: 8px;
-            line-height: 18px;
-        }
-    }
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  &.normal {
     .avator {
-        float: left;
-        display: inline-block;
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,.5);
-        border-radius: 50%;
-        background-size: contain;
+      width: 54px;
+      height: 54px;
+    }
+  }
+  &.small {
+    .avator {
+      width: 42px;
+      height: 42px;
     }
     .profile {
-        float: left;
-        margin-left: 10px;
-        line-height: 24px;
-        strong {
-            display: block;
-            padding-bottom: 3px;
-        }
-        p {
-            padding-top: 3px;
-        }
+      margin-left: 8px;
+      line-height: 18px;
     }
+  }
+  .avator {
+    float: left;
+    display: inline-block;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    background-size: contain;
+  }
+  .profile {
+    float: left;
+    margin-left: 10px;
+    line-height: 24px;
+    strong {
+      display: block;
+      padding-bottom: 3px;
+    }
+    p {
+      padding-top: 3px;
+    }
+  }
+  .follow-box {
+    //float: right;
+    position: absolute;
+    right: 0;
+  }
+  &.vertical {
+    display: block;
+    .avator, .profile {
+      float: none;
+      padding: 0;
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+    }
+    .follow-box {
+      text-align: center;
+      position: static;
+    }
+  }
+  &.horizontal {
+
+  }
 }

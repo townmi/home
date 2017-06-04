@@ -1,7 +1,7 @@
-'use strict'
-import React, { Component } from 'react';
+'use strict';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Provider } from 'mobx-react';
+import {Provider} from 'mobx-react';
 import authData from './store/AuthStore';
 import homeStore from './store/HomeStore';
 import {
@@ -18,29 +18,34 @@ import Bootstrap from './router/App/App';
 import User from './router/User/User';
 import List from './router/List/List';
 import Community from './router/Community/Community';
+import CommunityInfo from './router/CommunityInfo/CommunityInfo';
+import Publish from './router/Publish/Publish';
 
-const stores = { authData, homeStore }
+const stores = {authData, homeStore};
 
 class App extends Component {
     static propTypes = {
         routes: PropTypes.object.isRequired
     };
 
-    shouldComponentUpdate() {
+    static shouldComponentUpdate() {
         return false
     }
+
     render() {
-        const { routes } = this.props;
+        const {routes} = this.props;
         return (
             <div>
                 <Provider {...stores}>
                     <Router history={hashHistory}>
                         <Route path="/" component={Bootstrap}>
-                            <IndexRoute component={Launch} />
-                            <Route path="/home" component={Home} />
-                            <Route path="/user" component={User} />
-                            <Route path="/list" component={List} />
-                            <Route path="/community" component={Community} />
+                            <IndexRoute component={Launch}/>
+                            <Route name="home" path="/home" component={Home}/>
+                            <Route name="userCenter" path="/user" component={User}/>
+                            <Route name="venuesList" path="/list" component={List}/>
+                            <Route name="community" path="/community" component={Community}/>
+                            <Route name="message" path="/message/:id" component={CommunityInfo}/>
+                            <Route name="publish" path="/publish" component={Publish}/>
                         </Route>
                     </Router>
                 </Provider>

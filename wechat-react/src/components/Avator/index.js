@@ -1,34 +1,54 @@
-import React, { Component } from 'react';
-import { IndexLink, Link, withRouter, hashHistory } from 'react-router';
+import React, {Component} from 'react';
+import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './avator.scss';
 
 export default class Carousel extends Component {
     constructor(props) {
         super(props);
     }
+
     componentWillMount() {
-        let { avator, username, date, size } = this.props;
-        console.log(username, date);
+        let {size, style, showFollow, profile, model} = this.props;
         this.setState({
-            avator: avator ? avator : "http://www.wangmingdaquan.cc/tx61/66.jpg",
-            username: username ? username : undefined,
-            date: date ? date : undefined,
-            size: size ? size : "normal"
+            profile: profile ? profile : {
+                avator: "http://www.wangmingdaquan.cc/tx61/66.jpg"
+            },
+            size: size ? size : "normal",
+            style: style ? style : "horizontal", //vertical
+            showFollow: showFollow ? showFollow : false,
+            model: model ? model : undefined
         })
     }
+
     componentWillUnmount() {
     }
+
     render() {
-        const { avator, username, date, size } = this.state;
+        const {profile, size, style, showFollow, model} = this.state;
         return (
-            <div className={`avator-box clearfix ${size}`}>
-                <div className="avator" style={{ backgroundImage: `url(${avator})` }}>
+            <div className={`avator-box clearfix ${style} ${size}`}>
+                <div className="avator" style={{backgroundImage: `url(${profile.avator})`}}>
                 </div>
                 {
-                    username && date ?
+                    model === "default" ?
                         <div className="profile">
-                            <strong>{username}</strong>
-                            <p>{date}</p>
+                            <strong>{profile.username}</strong>
+                            <p>{profile.date}</p>
+                        </div>
+                        : ''
+                }
+                {
+                    model === "followCard" ?
+                        <div className="profile">
+                            <strong>{profile.username}</strong>
+                            <p>{`${profile.city}-${profile.area}`}</p>
+                        </div>
+                        : ''
+                }
+                {
+                    showFollow ?
+                        <div className="follow-box">
+                            <button>关注</button>
                         </div>
                         : ''
                 }

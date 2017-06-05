@@ -16,7 +16,7 @@ class CommunityInfo extends Component {
     componentWillMount() {
     }
 
-    static componentDidMount() {
+    componentDidMount() {
         document.title = "Night+--呃呃呃～算是吧～";
     }
 

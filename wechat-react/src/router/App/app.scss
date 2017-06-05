@@ -18,22 +18,43 @@
  .app {
      padding-bottom: 54px;
  }
-.transition-enter {
+.app-enter {
     position: absolute;
     opacity: 0.01;
     transition: .3s opacity ease-in-out;
 }
 
-.transition-enter.transition-enter-active {
+.app-enter.app-enter-active {
     opacity: 1;
 }
 
-.transition-leave {
+.app-leave {
     position: absolute;
     opacity: 1;
     transition: .3s opacity ease-in-out;
 }
 
-.transition-leave.transition-leave-active {
+.app-leave.app-leave-active {
     opacity: 0.01;
+}
+
+.app-search-enter {
+    position: absolute;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.3s;
+    z-index: 1;
+}
+
+.app-search-enter.app-search-enter-active {
+    transform: translate3d(0, 0, 0);
+}
+
+.app-search-leave {
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+}
+
+.app-search-leave.app-search-leave-active {
+    transform: translate3d(-100%, 0, 0);
 }

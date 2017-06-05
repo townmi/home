@@ -1,5 +1,5 @@
 {
-  "build_hash": "a2c6f31123a3cc8385d45bf46c5dde82",
+  "build_hash": "33fc21ae4f465ed61e6d62377f6ece47",
   "prefix": "ion-",
   "version": "2.0.1",
   "name": "Ionicons",
@@ -27,6 +27,10 @@
     {
       "code": "0xf146",
       "name": "list-active"
+    },
+    {
+      "code": "0xf21f",
+      "name": "search"
     },
     {
       "code": "0xf14e",

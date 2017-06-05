@@ -17,7 +17,7 @@ class Community extends Component {
     componentWillMount() {
     }
 
-    static componentDidMount() {
+    componentDidMount() {
         document.title = "Night+--社区";
     }
 
@@ -29,7 +29,7 @@ class Community extends Component {
         return true;
     }
 
-    static render() {
+    render() {
 
         const slides = [
             {

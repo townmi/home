@@ -1,13 +1,13 @@
 
 import Home from './Home';
-import App from './App';
+// import App from './App';
 import Launch from './Launch';
 import Login from './Login';
 
 export const createRoutes = (store) => ({
     path: '/',
     IndexRoute: Launch,
-    component: App,
+    // component: App,
     Route: {
         path: '/home',
         component: Launch,

@@ -6,7 +6,7 @@ import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './actionBar.scss';
 
 export default class ActionBar extends Component {
-    static render() {
+    render() {
         return (
             <Link className="action-bar" to={{pathname: "publish"}}>
                 参与

@@ -32,7 +32,7 @@ class Home extends Component {
         }
     }
 
-    static componentDidMount() {
+    componentDidMount() {
         document.title = "Night+--首页";
     }
 

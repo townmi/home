@@ -6,11 +6,26 @@ import './app.scss';
 
 export default class Bootstrap extends Component {
     render() {
+        const {route} = this.props;
+        let key = null;
+        if(route && route.name) {
+            switch (route.name) {
+                case "searchRoot":
+                    key = "app-search";
+                    break;
+                default:
+                    key = "app";
+                    break;
+            }
+        } else {
+            key = "app";
+        }
+        console.log(key);
         return (
-            <div className="app">
+            <div className={key}>
                 <CSSTransitionGroup
                     component="div"
-                    transitionName="transition"
+                    transitionName={key}
                     transitionEnterTimeout={300}
                     transitionLeaveTimeout={300}>
                     <div key={this.props.location.pathname}>
@@ -19,7 +34,12 @@ export default class Bootstrap extends Component {
                         }
                     </div>
                 </CSSTransitionGroup>
-                <TabBar />
+                {
+                    key === "app-search" ?
+                    ""
+                    :
+                    <TabBar />
+                }
             </div>
         )
     }

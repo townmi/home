@@ -11,7 +11,7 @@ class Launch extends Component {
     }
 
     init() {
-        let {push} = this.props.router;
+        const {push} = this.props.router;
         setTimeout(() => {
             push("/home");
         }, 1000);

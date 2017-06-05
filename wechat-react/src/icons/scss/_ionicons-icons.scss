@@ -8,6 +8,7 @@
 .#{$ionicons-prefix}index-active:before,
 .#{$ionicons-prefix}list:before,
 .#{$ionicons-prefix}list-active:before,
+.#{$ionicons-prefix}search:before,
 .#{$ionicons-prefix}user:before,
 .#{$ionicons-prefix}user-active:before
 {
@@ -19,5 +20,6 @@
 .#{$ionicons-prefix}index-active:before { content: $ionicon-var-index-active; }
 .#{$ionicons-prefix}list:before { content: $ionicon-var-list; }
 .#{$ionicons-prefix}list-active:before { content: $ionicon-var-list-active; }
+.#{$ionicons-prefix}search:before { content: $ionicon-var-search; }
 .#{$ionicons-prefix}user:before { content: $ionicon-var-user; }
 .#{$ionicons-prefix}user-active:before { content: $ionicon-var-user-active; }

@@ -20,6 +20,7 @@ import List from './router/List/List';
 import Community from './router/Community/Community';
 import CommunityInfo from './router/CommunityInfo/CommunityInfo';
 import Publish from './router/Publish/Publish';
+import Search from './router/Search/Search';
 
 const stores = {authData, homeStore};
 
@@ -28,7 +29,7 @@ class App extends Component {
         routes: PropTypes.object.isRequired
     };
 
-    static shouldComponentUpdate() {
+    shouldComponentUpdate() {
         return false
     }
 
@@ -45,7 +46,10 @@ class App extends Component {
                             <Route name="venuesList" path="/list" component={List}/>
                             <Route name="community" path="/community" component={Community}/>
                             <Route name="message" path="/message/:id" component={CommunityInfo}/>
-                            <Route name="publish" path="/publish" component={Publish}/>
+                        </Route>
+                        <Route name="publish" path="/publish" component={Publish}/>
+                        <Route name="searchRoot" path="/s" component={Bootstrap}>
+                            <Route name="search" path="/search" component={Search}/>
                         </Route>
                     </Router>
                 </Provider>

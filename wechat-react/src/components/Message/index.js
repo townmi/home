@@ -42,8 +42,7 @@ export default class Carousel extends Component {
         } else if (message.pictures.length > 1) {
             picturesList = message.pictures.map((cell, index) => {
                 return (
-                    <div className="img-single" key={index}>
-                        <img src={cell} alt=""/>
+                    <div className="img-single" key={index} style={{ backgroundImage: `url(${cell})`}}>
                     </div>
                 )
             });

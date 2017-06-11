@@ -6,7 +6,7 @@ const _instance = () => {
     let js_session = null;
 
     if (process.env.NODE_ENV === "development") {
-        js_session = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTYzMDA0MjAsImlzcyI6ImVlYTg3NmMwLTQwNjItMTFlNy1iZWYxLTZmODdiNjRjMDFkZiIsImlhdCI6MTQ5NjIxNDAyMH0.5K5_EiLYaY90j6_XTZBtpDR8421oaCsq775cTNBKmnA";
+        js_session = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0OTcwNzY0MzAsImlzcyI6Ijk4YWU1MzQwLTQxNTAtMTFlNy1iNDc3LWM5MTE5M2VjNzlkMSIsImlhdCI6MTQ5Njk5MDAzMH0.ER7w8Zm3CCUyYDStNAiKoR9pv-rjNyZimIx7Vha47nc";
     } else {
         js_session = cookie("js_session");
     }
@@ -15,12 +15,12 @@ const _instance = () => {
         if (process.env.NODE_ENV === "development") { // eslint-disable-line
             return axios.create({
                 timeout: 5000,
-                headers: { "Authorization": `Bearer ${js_session}`}
+                headers: { "Authorization": `Bearer ${js_session}` }
             });
         }
         return axios.create({
             timeout: 5000,
-            headers: { "Authorization": `Bearer ${js_session}`}
+            headers: { "Authorization": `Bearer ${js_session}` }
         });
     }
     return axios.create({

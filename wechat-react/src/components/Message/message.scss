@@ -1,15 +1,17 @@
 .card-message-top {
-  height: 60px;
+  height: 42px;
+  margin-bottom: 12px;
   position: relative;
 }
 
 .card-message-content {
+  display: block;
   h4 {
     line-height: 1.5em;
+    margin-bottom: 8px;
     font-size: 14px;
   }
   .img-single {
-    margin: 10px 0;
     img {
       width: 100%;
     }
@@ -39,4 +41,7 @@
       }
     }
   }
+}
+.card-message-bottom {
+  margin-top: 12px;
 }

@@ -21,7 +21,8 @@ if (process.env.NODE_ENV === "development") {
 
 export const API_ROOT = {
     weChatAuth: userApiDomain + "/auth/wechat?",
-    getUserInfo: userApiDomain + "/internal/userInfo?_type=User"
+    getUserInfo: userApiDomain + "/internal/userInfo?_type=User",
+    getTopicBanner: "http://127.0.0.1:9004/mockData/banner.json"
 }
 
 export const enums = {

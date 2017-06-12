@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import Avator from '../Avator';
+import CTABar from '../CTABar';
 import './message.scss';
 
 export default class Carousel extends Component {
@@ -50,7 +51,7 @@ export default class Carousel extends Component {
         return (
             <div className="card-message">
                 <div className="card-message-top">
-                    <Avator profile={profile} size={"small"} showFollow={true} model={"default"}/>
+                    <Avator profile={profile} showFollow={true} model={"default"}/>
                 </div>
                 {
                     route && route.name === "message" ?
@@ -68,7 +69,7 @@ export default class Carousel extends Component {
                             }
                         </div>
                         :
-                        <Link className="card-message-content" to={{pathname: "message/1233"}}>
+                        <Link className="card-message-content clearfix" to={{pathname: "message/1233"}}>
                             <h4>{message.description}</h4>
                             {
                                 message.pictures.length > 1 ?
@@ -82,7 +83,9 @@ export default class Carousel extends Component {
                             }
                         </Link>
                 }
-
+                <div className="card-message-bottom">
+                    <CTABar />
+                </div>
             </div>
         )
     }

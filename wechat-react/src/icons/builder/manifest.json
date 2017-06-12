@@ -1,5 +1,5 @@
 {
-  "build_hash": "35e485c0df30d7dac3950b556aca519d",
+  "build_hash": "b263d163e3b1a59eb15cc21c0ade3960",
   "prefix": "ion-",
   "version": "2.0.1",
   "name": "Ionicons",
@@ -839,6 +839,18 @@
     {
       "code": "0xf3c1",
       "name": "crop"
+    },
+    {
+      "code": "0xf14f",
+      "name": "cta-collection"
+    },
+    {
+      "code": "0xf150",
+      "name": "cta-comment"
+    },
+    {
+      "code": "0xf151",
+      "name": "cta-like"
     },
     {
       "code": "0xf318",

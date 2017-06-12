@@ -2,6 +2,8 @@ import axios from "axios";
 import { API_ROOT } from "../constants/";
 import { cookie } from "./uitls";
 
+axios.defaults.withCredentials = true;
+
 const _instance = () => {
     let js_session = null;
 
@@ -67,4 +69,8 @@ const __promiseTask = (task) => {
 
 export const getUserInfo = () => {
     return __promiseTask(_instance().get(API_ROOT.getUserInfo));
+}
+
+export const getTopicBanner = () => {
+    return __promiseTask(_instance().get(API_ROOT.getTopicBanner))
 }

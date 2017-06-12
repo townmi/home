@@ -1,9 +1,11 @@
+@import '../../assets/scss/setting';
+
 .community {
   margin-bottom: 20px;
 }
 .banner {
   position: relative;
-  padding-bottom: 44%;
+  height: 170px;
 }
 
 .title {
@@ -29,10 +31,29 @@
 }
 
 .news-timeLine {
-  height: 66px;
+  margin: 10px auto;
+  padding: 10px;
+  line-height: 26px;
   box-sizing: border-box;
-  // padding-top: 6px;
-  padding-left: 20px;
+  background-color: #ffffff;
+  ._title {
+    width: 40px;
+    float: left;
+    color: #333333;
+    font-size: 13px;
+    line-height: 1em;
+    border-right: 1px solid #D8D8D8;
+  }
+  ._message {
+    float: left;
+    padding-left: 12px;
+  }
+  ._text {
+    font-size: 14px;
+    color: $textGray;
+    padding-left: 90px;
+    text-align: left;
+  }
 }
 
 .section {
@@ -43,14 +64,26 @@
     font-size: 16px;
   }
   .message-cell {
-    padding: 0 10px;
+    padding: 15px 10px;
     margin: 10px 0;
+    background-color: #ffffff;
   }
 }
-.follow-list {
-  li {
-    width: 31.3%;
-    float: left;
-    margin: 0 1%;
+.section-follow {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  .follow-list {
+    padding: 0 10px; 
+    li {
+      width: 128px;
+      padding: 16px 0;
+      float: left;
+      margin-right: 7px;
+      background-color: #ffffff;
+      border: 1px solid #DDDDDD;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
   }
 }

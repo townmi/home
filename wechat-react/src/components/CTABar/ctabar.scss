@@ -1,0 +1,23 @@
+.cta-box {
+    .cell {
+        float: left;
+        line-height: 20px;
+        margin-right: 12px;
+        font-size: 14px;
+    }
+    ._collection {
+        .icon {
+            font-size: 1.1em;
+        }
+    }
+    .icon {
+        color: #CCCCCC;
+    }
+    .icon, .text {
+        float: left;
+        margin-right: 3px;
+    }
+    .text {
+        color: #999999;
+    }
+}

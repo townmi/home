@@ -1,11 +1,11 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <!--
-2017-6-5: Created with FontForge (http://fontforge.org)
+2017-6-12: Created with FontForge (http://fontforge.org)
 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20170104 at Mon Jun  5 11:03:14 2017
+Created by FontForge 20170104 at Mon Jun 12 17:59:49 2017
  By harry
 Copyright (c) 2017, harry
 </metadata>
@@ -19,7 +19,7 @@ Copyright (c) 2017, harry
     panose-1="2 0 5 3 0 0 0 0 0 0"
     ascent="448"
     descent="-64"
-    bbox="-0.35438 -65 620.105 448"
+    bbox="-0.35438 -65 620.105 448.047"
     underline-thickness="25.6"
     underline-position="-51.2"
     unicode-range="U+F138-F21F"
@@ -31,6 +31,13 @@ M0 3c-2 10 26 49 54 76c9 -20 27 -49 41 -66c-47 -14 -86 -18 -95 -10zM620 367c2 -1
     <glyph glyph-name="ion-community" unicode="&#xf13b;" horiz-adv-x="597" 
 d="M65 192c0 129 104 234 233 234s234 -105 234 -234s-105 -234 -234 -234s-233 105 -233 234zM42 192c0 -141 115 -256 256 -256s256 115 256 256s-115 256 -256 256s-256 -115 -256 -256zM71 126l-7 8s-92 -73 -56 -122c32 -43 230 19 367 104c148 91 245 203 216 249
 c-28 44 -114 10 -114 10l4 -11l3 -11c4 1 75 21 88 0c12 -18 -54 -122 -209 -218c-143 -89 -324 -127 -337 -110c-18 24 49 89 53 93z" />
+    <glyph glyph-name="ion-cta-collection" unicode="&#xf14f;" 
+d="M273 448l90 -161l183 -35l-127 -134l23 -182l-169 78l-169 -78l23 182l-127 134l183 35l90 161z" />
+    <glyph glyph-name="ion-cta-comment" unicode="&#xf150;" horiz-adv-x="564" 
+d="M440 183c30 0 54 24 54 54s-24 54 -54 54s-54 -24 -54 -54s24 -54 54 -54zM281 183c30 0 54 24 54 54s-24 54 -54 54s-54 -24 -54 -54s24 -54 54 -54zM122 183c30 0 54 24 54 54s-24 54 -54 54s-54 -24 -54 -54s24 -54 54 -54zM494 448v0c39 0 70 -31 70 -70v-282
+c0 -39 -31 -71 -70 -71h-1h-138l-73 -89l-73 89h-139v0c-39 0 -70 32 -70 71v282c0 39 31 70 70 70v0h424z" />
+    <glyph glyph-name="ion-cta-like" unicode="&#xf151;" horiz-adv-x="575" 
+d="M533 191c56 59 56 154 0 213c-29 30 -67 45 -105 44c-53 -1 -140 -74 -140 -74s-90 74 -144 74c-37 0 -74 -15 -102 -44c-56 -59 -56 -154 0 -213l245 -255l246 255z" />
     <glyph glyph-name="ion-index-active" unicode="&#xf13c;" 
 d="M273 448l90 -161l183 -35l-127 -134l23 -182l-169 78l-169 -78l23 182l-127 134l183 35l90 161z" />
     <glyph glyph-name="ion-index" unicode="&#xf145;" 

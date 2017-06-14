@@ -12,7 +12,7 @@ export default function rootRouter(app: Router) {
     app.get('/', function (req, res) {
 
         (async function () {
-            await sleep(3000);
+            await sleep(1000);
             return res.send({
                 "code": 200,
                 "total": 2,
@@ -22,7 +22,7 @@ export default function rootRouter(app: Router) {
                         "link": "",
                         "articleCount": 66,
                         "memberCount": 123,
-                        "topicBannerPic": "http://127.0.0.1:9004/mockData/banner-001.jpg"
+                        "topicBannerPic": "http://production.ye-dian.com//uploads/image/20170614/20170614114659_57916.jpeg"
                     },
                     {
                         "topic": "最美不过夜生活2",
@@ -39,7 +39,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/community', function (req, res) {
         (async function () {
-            await sleep(4000);
+            await sleep(1000);
             return res.send({
                 "code": 200,
                 "total": 2,
@@ -123,7 +123,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/message', function (req, res) {
         (async function () {
-            await sleep(4000);
+            await sleep(1000);
             return res.send({
                 "code": 200,
                 "total": 2,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { IndexLink, Link, withRouter, hashHistory } from 'react-router';
+import {Link} from 'react-router-dom';
 import './tabBar.scss';
 
 let domain = "";
@@ -21,7 +21,7 @@ switch (process.env.NODE_ENV) {
 }
 
 
-export default class TabBar extends Component {
+class TabBar extends Component {
     render() {
         const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
         return (
@@ -33,19 +33,19 @@ export default class TabBar extends Component {
                     </a>
                 </div>
                 <div className="item-list">
-                    <Link to="/list" activeClassName="active">
+                    <Link to="/list" >
                         <div className="icon ion-list"></div>
                         <span className="text">预订</span>
                     </Link>
                 </div>
                 <div className="item-community">
-                    <Link to="/community" activeClassName="active">
+                    <Link to="/community" >
                         <div className="icon ion-community"></div>
                         <span className="text">社区</span>
                     </Link>
                 </div>
                 <div className="item-user">
-                    <Link to="/user" activeClassName="active">
+                    <Link to="/user" >
                         <div className="icon ion-user"></div>
                         <span className="text">我的</span>
                     </Link>
@@ -54,3 +54,5 @@ export default class TabBar extends Component {
         )
     }
 }
+
+export default TabBar;

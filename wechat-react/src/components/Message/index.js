@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { IndexLink, Link, withRouter, hashHistory } from 'react-router';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Avator from '../Avator';
 import CTABar from '../CTABar';
 import './message.scss';
@@ -18,44 +19,53 @@ const defaultMessage = {
 };
 
 class Message extends Component {
+    static contextTypes = {
+        history: PropTypes.object.isRequired,
+        location: PropTypes.object.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.go = this.go.bind(this);
     }
 
     componentWillMount() {
-        const { profile, message } = this.props;
+        const {profile, message, canLink} = this.props;
 
         this.setState({
             profile: profile ? profile : defaultProfile,
-            message: message ? message : defaultMessage
+            message: message ? message : defaultMessage,
+            canLink: canLink === true
         })
     }
+
     componentWillReceiveProps(nextProps) {
-        const { profile, message } = this.props;
+        const {profile, message, canLink} = this.props;
         this.setState({
             profile: profile ? profile : defaultProfile,
-            message: message ? message : defaultMessage
+            message: message ? message : defaultMessage,
+            canLink: canLink === true
         })
     }
-    go (event, router) {
+
+    go(event, router) {
         console.log(this);
         console.log(event, router);
-        if(router) {
+        if (router) {
         }
     }
+
     render() {
-        const { route } = this.props;
-        const { profile, message } = this.state;
+        const {profile, message, canLink} = this.state;
         let picturesList = "";
         if (message.pictures.length === 1) {
             picturesList = (
-                <img src={message.pictures[0]} alt="" />
+                <img src={message.pictures[0]} alt=""/>
             );
         } else if (message.pictures.length > 1) {
             picturesList = message.pictures.map((cell, index) => {
                 return (
-                    <div className="img-single" key={index} style={{ backgroundImage: `url(${cell})` }}>
+                    <div className="img-single" key={index} style={{backgroundImage: `url(${cell})`}}>
                     </div>
                 )
             });
@@ -63,10 +73,10 @@ class Message extends Component {
         return (
             <div className="card-message">
                 <div className="card-message-top">
-                    <Avator profile={profile} showFollow={true} model={"default"} />
+                    <Avator profile={profile} showFollow={true} model={"default"}/>
                 </div>
                 {
-                    route && route.name === "message" ?
+                    !canLink ?
                         <div className="card-message-content">
                             <h4>{message.description}</h4>
                             {
@@ -81,7 +91,7 @@ class Message extends Component {
                             }
                         </div>
                         :
-                        <Link className="card-message-content clearfix" to={{ pathname: "message/1233" }}>
+                        <Link className="card-message-content clearfix" to={{pathname: "message/1233"}}>
                             <h4>{message.description}</h4>
                             {
                                 message.pictures.length > 1 ?
@@ -106,17 +116,15 @@ class Message extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     const { appStatus } = state;
-//     console.log(state)
-//     return {
-//     }
-// }
+const mapStateToProps = state => {
+    const {appStatus} = state;
+    console.log(state);
+    return {}
+};
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {}
+};
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Message);
-export default Message;
+export default connect(mapStateToProps, mapDispatchToProps)(Message);
+// export default Message;

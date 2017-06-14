@@ -2,7 +2,7 @@
  * Created by townmi on 17/6/4.
  */
 import React, {Component} from 'react';
-import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
+import {Link} from 'react-router-dom';
 import './search.scss';
 
 class Publish extends Component {

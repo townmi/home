@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
+import {Link} from 'react-router-dom';
 import './user.scss';
 
 class User extends Component {

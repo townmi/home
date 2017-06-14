@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {observer, inject} from 'mobx-react';
-import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
+import {Link} from 'react-router-dom';
 import './list.scss';
 
 // @inject('authData', 'homeStore') @observer

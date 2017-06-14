@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './avator.scss';
 
-export default class Carousel extends Component {
+export default class Avator extends Component {
     constructor(props) {
         super(props);
     }

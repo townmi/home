@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {observer, inject} from 'mobx-react';
 import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './user.scss';
 
-@inject('authData', 'homeStore') @observer
 class User extends Component {
     constructor(props) {
         super(props);
@@ -22,13 +20,10 @@ class User extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const {account} = this.props.authData;
         return true;
     }
 
     refresh() {
-        const {refresh, account} = this.props.authData;
-        console.log(account)
     }
 
     render() {

@@ -3,7 +3,7 @@ import {observer, inject} from 'mobx-react';
 import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './list.scss';
 
-@inject('authData', 'homeStore') @observer
+// @inject('authData', 'homeStore') @observer
 class List extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +14,7 @@ class List extends Component {
     }
 
     componentWillMount() {
+        console.log(this.props);
         const self = this;
     }
 
@@ -22,12 +23,12 @@ class List extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const {account} = this.props.authData;
+        // const {account} = this.props.authData;
         return true;
     }
 
     refresh() {
-        const {refresh, account} = this.props.authData;
+        // const {refresh, account} = this.props.authData;
         console.log(account)
     }
 

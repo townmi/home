@@ -1,14 +1,16 @@
 'use strict';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Provider} from 'mobx-react';
-import authData from './store/AuthStore';
-import homeStore from './store/HomeStore';
+import { Provider } from 'react-redux';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+
 import {
-    Router,
-    Route,
-    IndexRoute,
-    hashHistory
+    // Route,
+    HashRouter as Router,
+} from 'react-router-dom';
+import {
+    Switch,
+    Route
 } from 'react-router';
 
 import Home from './router/Home/Home';
@@ -22,7 +24,14 @@ import CommunityInfo from './router/CommunityInfo/CommunityInfo';
 import Publish from './router/Publish/Publish';
 import Search from './router/Search/Search';
 
-const stores = {authData, homeStore};
+import store from './store';
+
+// console.log(store)
+// const stores = {authData, homeStore, AppStatus};
+
+// console.log(Router.hashHistory)
+
+// const history = syncHistoryWithStore(Router.hashHistory, store)
 
 class App extends Component {
     static propTypes = {
@@ -30,33 +39,53 @@ class App extends Component {
     };
 
     shouldComponentUpdate() {
-        return false
+        return true;
     }
 
     render() {
-        const {routes} = this.props;
+        // const { routes } = this.props;
         return (
-            <div>
-                <Provider {...stores}>
-                    <Router history={hashHistory}>
-                        <Route path="/" component={Bootstrap}>
-                            <IndexRoute component={Launch}/>
-                            <Route name="home" path="/home" component={Home}/>
-                            <Route name="userCenter" path="/user" component={User}/>
-                            <Route name="venuesList" path="/list" component={List}/>
-                            <Route name="community" path="/community" component={Community}/>
-                            <Route name="message" path="/message/:id" component={CommunityInfo}/>
-                        </Route>
-                        <Route name="publish" path="/publish" component={Publish}/>
-                        <Route name="searchRoot" path="/s" component={Bootstrap}>
-                            <Route name="search" path="/search" component={Search}/>
-                        </Route>
-                    </Router>
-                </Provider>
-            </div>
+            <Provider store={store}>
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={Bootstrap} />
+                        <Route name="home" path="/home" component={Home} />
+                        <Route name="userCenter" path="/user" component={User} />
+                        <Route name="venuesList" path="/list" component={List} />
+                        <Route name="community" path="/community" component={Community} />
+                        <Route name="message" path="/message/:id" component={CommunityInfo} />
+                        <Route name="publish" path="/publish" component={Publish} />
+                        <Route name="searchRoot" path="/s" component={Bootstrap} />
+                        <Route name="search" path="/search" component={Search} />
+                    </Switch>
+                </Router>
+            </Provider>
         )
 
     }
+
+    // render() {
+    //     const { routes } = this.props;
+    //     return (
+    //         <Provider store={store}>
+    //             <Router history={history}>
+    //                 <Route path="/" component={Bootstrap}>
+    //                     <IndexRoute component={Launch} />
+    //                     <Route name="home" path="/home" component={Home} />
+    //                     <Route name="userCenter" path="/user" component={User} />
+    //                     <Route name="venuesList" path="/list" component={List} />
+    //                     <Route name="community" path="/community" component={Community} />
+    //                     <Route name="message" path="/message/:id" component={CommunityInfo} />
+    //                 </Route>
+    //                 <Route name="publish" path="/publish" component={Publish} />
+    //                 <Route name="searchRoot" path="/s" component={Bootstrap}>
+    //                     <Route name="search" path="/search" component={Search} />
+    //                 </Route>
+    //             </Router>
+    //         </Provider>
+    //     )
+
+    // }
 
 }
 

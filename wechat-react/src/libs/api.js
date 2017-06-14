@@ -51,14 +51,10 @@ const __promiseTask = (task) => {
                 if (res.data && res.data.code === 200) {
                     resolve(res.data);
                 } else {
-                    reject({
-                        status: res.status
-                    });
+                    reject(res);
                 }
             } else {
-                reject({
-                    status: res.status
-                });
+                reject(res);
             }
         }, error => {
             reject(error);
@@ -73,4 +69,16 @@ export const getUserInfo = () => {
 
 export const getTopicBanner = () => {
     return __promiseTask(_instance().get(API_ROOT.getTopicBanner))
+}
+
+export const getIndexMessage = () => {
+    return __promiseTask(_instance().get(API_ROOT.getIndexMessage))
+}
+
+export const getIndexUserList = () => {
+    return __promiseTask(_instance().get(API_ROOT.getIndexUserList))
+}
+
+export const getMessageInfo = () => {
+    return __promiseTask(_instance().get(API_ROOT.getMessageInfo))
 }

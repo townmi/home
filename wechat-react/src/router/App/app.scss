@@ -1,27 +1,11 @@
-// :global(.transitionWrapper-enter) {
-//     opacity: 0.01;
-//     transition: opacity 30000ms ease-in;
-// }
- 
-// :global(.transitionWrapper-enter.transitionWrapper-enter-active) {
-//     opacity: 1;
-// }
- 
-// :global(.transition-leave) {
-//     opacity: 1;
-//     transition: opacity 30000ms ease-in;
-// }
- 
-// :global(.transition-leave.transition-leave-active) {
-//     opacity: 0;
-// }
  .app {
      padding-bottom: 54px;
  }
 .app-enter {
+    width: 100%;
     position: absolute;
     opacity: 0.01;
-    transition: 12s opacity ease-in-out;
+    transition: .3s opacity ease-in-out;
 }
 
 .app-enter.app-enter-active {
@@ -29,9 +13,10 @@
 }
 
 .app-leave {
+    width: 100%;
     position: absolute;
     opacity: 1;
-    transition: 12s opacity ease-in-out;
+    transition: .3s opacity ease-in-out;
 }
 
 .app-leave.app-leave-active {

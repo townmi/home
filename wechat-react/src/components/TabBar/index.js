@@ -23,7 +23,7 @@ switch (process.env.NODE_ENV) {
 
 export default class TabBar extends Component {
     render() {
-        const cellWidth = window.innerWidth > 375 ? 375 : window.innerWidth;
+        const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
         return (
             <div className="tab-bar" style={{ width: cellWidth, marginLeft: `-${cellWidth / 2}px` }}>
                 <div className="item-index">

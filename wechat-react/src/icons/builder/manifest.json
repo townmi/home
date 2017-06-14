@@ -1,5 +1,5 @@
 {
-  "build_hash": "b263d163e3b1a59eb15cc21c0ade3960",
+  "build_hash": "2dab7798bb7f21ae3a4edf4e5805aade",
   "prefix": "ion-",
   "version": "2.0.1",
   "name": "Ionicons",
@@ -2195,6 +2195,10 @@
     {
       "code": "0xf29d",
       "name": "load-d"
+    },
+    {
+      "code": "0xf152",
+      "name": "loading"
     },
     {
       "code": "0xf1ff",

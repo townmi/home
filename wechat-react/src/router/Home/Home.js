@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {observer, inject} from 'mobx-react';
+// import {observer, inject} from 'mobx-react';
 import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './home.scss';
 
-@inject('authData', 'homeStore') @observer
+// @inject('authData', 'homeStore') @observer
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -14,22 +14,22 @@ class Home extends Component {
     }
 
     componentWillMount() {
-        const self = this;
-        const {account, auth} = this.props.authData;
-        const {push} = this.props.router;
-        if (!account) {
-            auth(() => {
-                self.setState({
-                    account: account
-                });
-            }, () => {
-                // push("/login");
-            });
-        } else {
-            this.setState({
-                account: account
-            });
-        }
+        // const self = this;
+        // const {account, auth} = this.props.authData;
+        // const {push} = this.props.router;
+        // if (!account) {
+        //     auth(() => {
+        //         self.setState({
+        //             account: account
+        //         });
+        //     }, () => {
+        //         // push("/login");
+        //     });
+        // } else {
+        //     this.setState({
+        //         account: account
+        //     });
+        // }
     }
 
     componentDidMount() {
@@ -41,13 +41,13 @@ class Home extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const {account} = this.props.authData;
+        // const {account} = this.props.authData;
         return true;
     }
 
     refresh() {
-        const {refresh, account} = this.props.authData;
-        console.log(account)
+        // const {refresh, account} = this.props.authData;
+        // console.log(account)
     }
 
     render() {

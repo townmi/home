@@ -33,18 +33,18 @@ class authDataStore {
 		// this.account = null;
 		// this.login = false;
 		// this.logining = true;
-		getUserInfo().then(res => {
-			this.account = res.data;
-			this.login = true;
-			this.logining = false;
-			// success && success();
-		}, error => {
-			this.login = false;
-			this.account = null;
-			this.logining = false;
-			console.log(error)
-			// error && error();
-		});
+		// getUserInfo().then(res => {
+		// 	this.account = res.data;
+		// 	this.login = true;
+		// 	this.logining = false;
+		// 	// success && success();
+		// }, error => {
+		// 	this.login = false;
+		// 	this.account = null;
+		// 	this.logining = false;
+		// 	console.log(error)
+		// 	// error && error();
+		// });
 	}
 }
 const authData = new authDataStore()

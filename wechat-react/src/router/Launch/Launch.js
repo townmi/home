@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {observer, inject} from 'mobx-react';
+// import {observer, inject} from 'mobx-react';
 import {IndexLink, Link, withRouter, hashHistory} from 'react-router';
 import './launch.scss';
 
-@inject('authData') @observer
+// @inject('authData') @observer
 class Launch extends Component {
     constructor(props) {
         super(props);

@@ -4,6 +4,5 @@ import { routerReducer } from 'react-router-redux'
 import appStatus from './appStatus';
 
 export default combineReducers({
-    appStatus,
-    routerReducer
+    appStatus
 });

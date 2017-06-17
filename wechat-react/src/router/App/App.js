@@ -1,105 +1,97 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
-    Route
-} from 'react-router';
-import {connect} from 'react-redux';
-
-import {loadSuccess, loadFail} from '../../store/actions/appStatus';
+    BrowserRouter as Router,
+    Redirect,
+    Switch,
+    Route,
+    withRouter
+} from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-
 
 import Community from '../Community/Community';
 import CommunityInfo from '../CommunityInfo/CommunityInfo';
 import Publish from '../Publish/Publish';
-
+import Search from '../Search/Search';
 
 import TabBar from '../../components/TabBar';
 import Loading from '../../components/Loading';
 import './app.scss';
 
-// @inject('AppStatus') @observer
 class Bootstrap extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false
+            loading: false,
+            hideBar: false,
+            router: null
         }
     }
-
     componentWillMount() {
-        const {loading} = this.props;
+        const { loading } = this.props;
         this.setState({
             loading: loading
         })
     }
-
     shouldComponentUpdate(nextProps, nextState) {
         return true;
     }
-
     componentWillReceiveProps(nextProps) {
+        // console.log(nextProps)
         this.setState({
-            loading: nextProps.loading
+            loading: nextProps.loading,
+            hideBar: nextProps.hideBar,
+            router: nextProps.router
         });
     }
-
     componentDidMount() {
-        // const { loading } = this.state;
     }
 
     render() {
-        const {route} = this.props;
-        const {loading} = this.state;
-
+        let key = "app";
+        const { route, location } = this.props;
+        const { loading, hideBar } = this.state;
         const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
-        let key = null;
-        if (route && route.name) {
-            switch (route.name) {
-                case "searchRoot":
-                    key = "app-search";
-                    break;
-                default:
-                    key = "app";
-                    break;
-            }
-        } else {
-            key = "app";
-        }
-        console.log(loading);
+        console.log(hideBar);
         return (
-            <div className={key} style={{width: `${cellWidth}px`}}>
-                <CSSTransitionGroup
-                    component="div"
-                    transitionName={key}
-                    transitionEnterTimeout={300}
-                    transitionLeaveTimeout={300}>
-                    <Route name="community" path="/community" component={Community} />
-                    <Route name="message" path="/message/:id" component={CommunityInfo} />
-                    <Route name="publish" path="/publish" component={Publish} />
-                </CSSTransitionGroup>
-                {
-                    key === "app-search" ?
-                        ""
-                        :
-                        <TabBar />
-                }
-                {
-                    loading ?
-                        <Loading />
-                        :
-                        ""
-                }
-            </div>
+            <Router>
+                <Route render={({ location }) => (
+                    <div className={key} style={{ width: `${cellWidth}px` }}>
+                        <Route exact path="/" render={() => (
+                            <Redirect to="/community" />
+                        )} />
+                        {
+                            hideBar ? "" : <TabBar />
+                        }
+                        <CSSTransitionGroup
+                            transitionName={key}
+                            transitionEnterTimeout={300}
+                            transitionLeaveTimeout={300}
+                        >
+                            <Switch key={location.key} location={location}>
+                                <Route path="/community" component={Community} />
+                                <Route path="/message/:id" component={CommunityInfo} />
+                                <Route path="/publish" component={Publish} />
+                                <Route path="/search" component={Search} />
+                            </Switch>
+                        </CSSTransitionGroup>
+                        {
+                            loading ? <Loading /> : ""
+                        }
+                    </div>
+                )} />
+            </Router>
         )
     }
 }
 
 const mapStateToProps = state => {
-    const {appStatus} = state;
-
+    const { appStatus, router } = state;
     return {
-        loading: appStatus.loading || false
+        loading: appStatus.loading || false,
+        hideBar: appStatus.hideBar || false,
+        router
     }
 };
 

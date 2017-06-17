@@ -1,40 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // import {observer, inject} from 'mobx-react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Message from '../../components/Message';
 import VenuesCell from '../../components/VenuesCell';
 import './communityInfo.scss';
-import {getMessageInfo} from '../../libs/api';
+import { getMessageInfo } from '../../libs/api';
 
-import {loading, loadSuccess, loadFail} from '../../store/actions/appStatus';
+import { loading, loadSuccess, loadFail } from '../../store/actions/appStatus';
 
 class CommunityInfo extends Component {
-    static childContextTypes = {
-        history: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired
-    };
-
     constructor(props) {
         super(props);
         this.state = {
             messageInfo: {}
         }
     }
-
-    getChildContext() {
-        const {history, location} = this.props;
-        return {history, location};
-    }
-
     componentWillMount() {
         const self = this;
-        const {location, loading, loadSuccess, loadFail} = this.props;
-        if (location.action === "POP") {
-            return false;
-        }
+        const { loading, loadSuccess, loadFail } = this.props;
         loading();
         getMessageInfo().then(res => {
             loadSuccess();
@@ -55,10 +41,10 @@ class CommunityInfo extends Component {
     }
 
     render() {
-        const {messageInfo} = this.state;
+        const { messageInfo } = this.state;
         return (
             <div className="community-info">
-                <Message profile={messageInfo.profile} message={messageInfo.message} canLink={false}/>
+                <Message profile={messageInfo.profile} message={messageInfo.message} canLink={false} />
                 <VenuesCell />
             </div>
         )
@@ -71,7 +57,6 @@ class CommunityInfo extends Component {
 }
 
 const mapStateToProps = state => {
-    const {appStatus} = state;
     return {}
 };
 

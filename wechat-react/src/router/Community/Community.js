@@ -13,10 +13,6 @@ import {getTopicBanner, getIndexMessage, getIndexUserList} from '../../libs/api'
 import {loading, loadSuccess, loadFail} from '../../store/actions/appStatus';
 
 class Community extends Component {
-    static childContextTypes = {
-        history: PropTypes.object.isRequired,
-        location: PropTypes.object.isRequired
-    };
 
     constructor(props) {
         super(props);
@@ -25,11 +21,6 @@ class Community extends Component {
             messages: [],
             userList: []
         }
-    }
-
-    getChildContext() {
-        const {history, location} = this.props;
-        return {history, location};
     }
 
     componentWillMount() {

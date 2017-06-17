@@ -33,7 +33,7 @@ class TabBar extends Component {
                     </a>
                 </div>
                 <div className="item-list">
-                    <Link to="/list" >
+                    <Link to="/message/123" >
                         <div className="icon ion-list"></div>
                         <span className="text">预订</span>
                     </Link>
@@ -45,7 +45,7 @@ class TabBar extends Component {
                     </Link>
                 </div>
                 <div className="item-user">
-                    <Link to="/user" >
+                    <Link to="/publish" >
                         <div className="icon ion-user"></div>
                         <span className="text">我的</span>
                     </Link>

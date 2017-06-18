@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
     Redirect,
@@ -6,7 +6,7 @@ import {
     Route,
     withRouter
 } from 'react-router-dom';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
@@ -28,66 +28,68 @@ class Bootstrap extends Component {
             router: null
         }
     }
+
     componentWillMount() {
-        const { loading } = this.props;
+        const {loading} = this.props;
         this.setState({
             loading: loading
         })
     }
+
     shouldComponentUpdate(nextProps, nextState) {
         return true;
     }
+
     componentWillReceiveProps(nextProps) {
-        // console.log(nextProps)
         this.setState({
             loading: nextProps.loading,
             hideBar: nextProps.hideBar,
             router: nextProps.router
         });
     }
+
     componentDidMount() {
     }
 
     render() {
-        let key = "app";
-        const { route, location } = this.props;
-        const { loading, hideBar } = this.state;
+        const key = "app";
+        const {loading, hideBar} = this.state;
         const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
-        console.log(hideBar);
         return (
             <Router>
-                <Route render={({ location }) => (
-                    <div className={key} style={{ width: `${cellWidth}px` }}>
+                <Route render={({location}) => (
+                    <div className={key} style={{width: `${cellWidth}px`}}>
                         <Route exact path="/" render={() => (
-                            <Redirect to="/community" />
-                        )} />
+                            <Redirect to="/community"/>
+                        )}/>
                         {
                             hideBar ? "" : <TabBar />
                         }
                         <CSSTransitionGroup
+                            component="div"
                             transitionName={key}
                             transitionEnterTimeout={300}
                             transitionLeaveTimeout={300}
                         >
                             <Switch key={location.key} location={location}>
-                                <Route path="/community" component={Community} />
-                                <Route path="/message/:id" component={CommunityInfo} />
-                                <Route path="/publish" component={Publish} />
-                                <Route path="/search" component={Search} />
+                                <Route path="/community" component={Community}/>
+                                <Route path="/message/:id" component={CommunityInfo}/>
+                                <Route path="/publish" component={Publish}/>
+                                <Route path="/search" component={Search}/>
                             </Switch>
                         </CSSTransitionGroup>
                         {
                             loading ? <Loading /> : ""
                         }
                     </div>
-                )} />
+                )}/>
             </Router>
         )
     }
 }
 
 const mapStateToProps = state => {
-    const { appStatus, router } = state;
+    const {appStatus, router} = state;
     return {
         loading: appStatus.loading || false,
         hideBar: appStatus.hideBar || false,

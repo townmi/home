@@ -41,7 +41,35 @@
       }
     }
   }
+  .topics {
+    margin: 8px 0;
+    * {
+      display: inline-block;
+      line-height: 18px;
+      margin-right: 10px;
+    }
+    .city {
+      padding: 0 5px;
+      background-color: #CCCCCC;
+      color: #ffffff;
+      border-radius: 2px;
+    }
+  }
 }
 .card-message-bottom {
   margin-top: 12px;
+  &.fix {
+    max-width: 414px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    height: 50px;
+    z-index: 9;
+    background: #14171b;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    box-shadow: 0 -3px 5px 0 rgba(0, 0, 0, .2);
+  }
 }

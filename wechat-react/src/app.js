@@ -1,9 +1,6 @@
 import React from 'react';
-import { useStrict } from 'mobx';
 import ReactDOM from 'react-dom';
 import App from './main';
-
-useStrict(true);
 
 const MOUNT_NODE = document.getElementById('app');
 

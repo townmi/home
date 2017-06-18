@@ -12,7 +12,7 @@ export default function rootRouter(app: Router) {
     app.get('/', function (req, res) {
 
         (async function () {
-            await sleep(1000);
+            await sleep(500);
             return res.send({
                 "code": 200,
                 "total": 2,
@@ -39,7 +39,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/community', function (req, res) {
         (async function () {
-            await sleep(1000);
+            await sleep(500);
             return res.send({
                 "code": 200,
                 "total": 2,
@@ -81,7 +81,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/userlist', function (req, res) {
         (async function () {
-            await sleep(4000);
+            await sleep(500);
             return res.send({
                 "code": 200,
                 "total": 2,
@@ -123,7 +123,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/message', function (req, res) {
         (async function () {
-            await sleep(1000);
+            await sleep(500);
             return res.send({
                 "code": 200,
                 "total": 2,

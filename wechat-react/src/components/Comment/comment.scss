@@ -1,0 +1,26 @@
+.comment {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #ffffff;
+  ._title {
+    font-size: 18px;
+    line-height: 1.39em;
+    margin-bottom: 10px;
+  }
+}
+.comment-content {
+  .cell {
+    padding-top: 10px;
+    border-bottom: 1px solid #E1E1E1;
+    &:last-child {
+      border-bottom: none
+    }
+    ._content {
+      font-size: 16px;
+      line-height: 1.4em;
+      color: #333333;
+      margin: 10px auto;
+    }
+  }
+}

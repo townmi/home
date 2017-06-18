@@ -27,13 +27,18 @@ class Publish extends Component {
         const { show } = this.state;
         return (
             <div className="publish" style={show ? { display: "block" } : { display: "none" }}>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <Link to={{ pathname: "search" }}>
-                    <p>
-                        所在KTV／酒吧
-                    </p>
-                </Link>
-                <button className="publist-submit" onClick={this.submit}>发布</button>
+                <form action="">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <div>
+                        <input type="file"/>
+                    </div>
+                    <Link to={{ pathname: "search" }}>
+                        <p>
+                            所在KTV／酒吧
+                        </p>
+                    </Link>
+                    <button className="publish-submit" onClick={this.submit}>发布</button>
+                </form>
             </div>
         )
     }

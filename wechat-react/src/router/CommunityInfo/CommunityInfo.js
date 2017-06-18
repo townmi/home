@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-// import {observer, inject} from 'mobx-react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Message from '../../components/Message';
 import VenuesCell from '../../components/VenuesCell';
+import Comment from '../../components/Comment';
 import './communityInfo.scss';
 import { getMessageInfo } from '../../libs/api';
 
-import { loading, loadSuccess, loadFail } from '../../store/actions/appStatus';
+import { loading, loadSuccess, loadFail, hideBar, showBar } from '../../store/actions/appStatus';
 
 class CommunityInfo extends Component {
     constructor(props) {
@@ -20,7 +18,8 @@ class CommunityInfo extends Component {
     }
     componentWillMount() {
         const self = this;
-        const { loading, loadSuccess, loadFail } = this.props;
+        const { loading, loadSuccess, loadFail, hideBar } = this.props;
+        hideBar();
         loading();
         getMessageInfo().then(res => {
             loadSuccess();
@@ -43,9 +42,12 @@ class CommunityInfo extends Component {
     render() {
         const { messageInfo } = this.state;
         return (
-            <div className="community-info">
-                <Message profile={messageInfo.profile} message={messageInfo.message} canLink={false} />
-                <VenuesCell />
+            <div>
+                <div className="community-info">
+                    <Message profile={messageInfo.profile} message={messageInfo.message} canLink={false} />
+                    <VenuesCell />
+                </div>
+                <Comment />
             </div>
         )
     }
@@ -54,6 +56,10 @@ class CommunityInfo extends Component {
         document.title = "Night+--呃呃呃～算是吧～";
     }
 
+    componentWillUnmount() {
+        const { showBar } = this.props;
+        showBar();
+    }
 }
 
 const mapStateToProps = state => {
@@ -70,6 +76,12 @@ const mapDispatchToProps = (dispatch) => {
         },
         loadFail: () => {
             dispatch(loadFail())
+        },
+        hideBar: () => {
+            dispatch(hideBar())
+        },
+        showBar: () => {
+            dispatch(showBar())
         }
     }
 };

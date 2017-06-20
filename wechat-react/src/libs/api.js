@@ -65,20 +65,36 @@ const __promiseTask = (task) => {
 
 export const getUserInfo = () => {
     return __promiseTask(_instance().get(API_ROOT.getUserInfo));
-}
+};
 
+/**
+ * 获取HOME页面 Banner列表
+ */
 export const getTopicBanner = () => {
-    return __promiseTask(_instance().get(API_ROOT.getTopicBanner))
-}
+    return __promiseTask(_instance().get(API_ROOT.getTopicBanner));
+};
 
+/**
+ * 获取HOME页面 消息列表
+ */
 export const getIndexMessage = () => {
-    return __promiseTask(_instance().get(API_ROOT.getIndexMessage))
-}
+    return __promiseTask(_instance().get(API_ROOT.getIndexMessage));
+};
 
+/**
+ * 获取HOME页面推送 大V 列表
+ */
 export const getIndexUserList = () => {
-    return __promiseTask(_instance().get(API_ROOT.getIndexUserList))
-}
+    return __promiseTask(_instance().get(API_ROOT.getIndexUserList));
+};
 
+/**
+ * 获取消息详情
+ */
 export const getMessageInfo = () => {
-    return __promiseTask(_instance().get(API_ROOT.getMessageInfo))
-}
+    return __promiseTask(_instance().get(API_ROOT.getMessageInfo));
+};
+
+export const getSearch = () => {
+    return __promiseTask(_instance().get(API_ROOT.getSearch));
+};

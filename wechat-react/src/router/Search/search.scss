@@ -1,8 +1,9 @@
 .search-page {
-    padding: 18px 10px 24px 10px;
+    padding: 18px 10px 10px;
     background-color: #ffffff;
     .input-box {
         line-height: 36px;
+        margin-bottom:  24px;
         box-sizing: border-box;
         padding-left: 30%;
         border: 1px solid #CCCCCC;
@@ -16,6 +17,23 @@
         }
         &.focus {
             padding-left: 12px;
+        }
+    }
+    h3 {
+        font-size: 14px;
+        color: #999999;
+    }
+    ul {
+        li {
+            border-bottom: 1px solid #EEEEEE;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        &.topic {
+            li {
+                padding: 20px 0;
+            }
         }
     }
 }

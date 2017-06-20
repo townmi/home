@@ -25,7 +25,8 @@ export const API_ROOT = {
     getTopicBanner: "http://127.0.0.1:4003/",
     getIndexMessage: "http://127.0.0.1:4003/community",
     getIndexUserList: "http://127.0.0.1:4003/userlist",
-    getMessageInfo: "http://127.0.0.1:4003/message"
+    getMessageInfo: "http://127.0.0.1:4003/message",
+    getSearch: "http://127.0.0.1:4003/search"
 }
 
 export const enums = {

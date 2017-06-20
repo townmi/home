@@ -150,6 +150,30 @@ export default function rootRouter(app: Router) {
         }());
     });
 
+    app.get('/search', function (req, res) {
+        (async function () {
+            await sleep(500);
+            return res.send({
+                "code": 200,
+                "total": 2,
+                "data": [
+                    {
+                        id: "acbd",
+                        topic: "#最美夜生活#"
+                    },
+                    {
+                        id: "acbdc",
+                        topic: "#最美夜生活#"
+                    },
+                    {
+                        id: "acbde",
+                        topic: "#最美夜生活#"
+                    }
+                ]
+            });
+        }());
+    });
+
     app.get('/token', function (req, res) {
         (async function () {
             await sleep(500);

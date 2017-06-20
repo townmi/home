@@ -30,10 +30,25 @@
                 border-bottom: none;
             }
         }
+        h4 {
+            font-size: 16px;
+            color: #333333;
+        }
+        p {
+            color: #999999;
+            line-height: 1.4em;
+            font-size: 14px;
+        }
         &.topic {
             li {
                 padding: 20px 0;
             }
+        }
+        &.venues {
+            li {
+                padding: 14px 0;
+            }
+            
         }
     }
 }

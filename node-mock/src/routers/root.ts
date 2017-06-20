@@ -159,15 +159,18 @@ export default function rootRouter(app: Router) {
                 "data": [
                     {
                         id: "acbd",
-                        topic: "#最美夜生活#"
+                        topic: "#最美夜生活#",
+                        address: "建国西路283号"
                     },
                     {
                         id: "acbdc",
-                        topic: "#最美夜生活#"
+                        topic: "#最美夜生活#",
+                        address: "建国西路283号"
                     },
                     {
                         id: "acbde",
-                        topic: "#最美夜生活#"
+                        topic: "#最美夜生活#",
+                        address: "建国西路283号"
                     }
                 ]
             });

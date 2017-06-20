@@ -6,25 +6,34 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './publish.scss';
 
+import VenuesCell from '../../components/VenuesCell';
+import Tag from '../../components/Tag';
+
 import { hideBar, showBar } from '../../store/actions/appStatus';
 
 class Publish extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: true
+            show: true,
+            publish: null
         }
         this.submit = this.submit.bind(this);
     }
     componentWillMount() {
-        const { hideBar } = this.props;
+        const { hideBar, publish } = this.props;
         hideBar();
+        this.setState({
+            publish
+        });
+    }
+    componentWillReceiveProps(nextProps) {
     }
     submit() {
         this.props.router.push("/message/123");
     }
     render() {
-        const { show } = this.state;
+        const { show, publish } = this.state;
         return (
             <div className="publish" style={show ? { display: "block" } : { display: "none" }}>
                 <form action="">
@@ -39,11 +48,21 @@ class Publish extends Component {
                     <Link to={{ pathname: "/search", state: { type: "venues" } }}>
                         <div className="select">
                             <p><i className="icon ion-venues-address"></i> <span>所在地点</span> <i className="icon ion-angle-right"></i></p>
+                            {
+                                publish && publish.venues ?
+                                    <VenuesCell />
+                                    : ""
+                            }
                         </div>
                     </Link>
-                    <Link to={{ pathname: "/search", state: { type: "topic" }  }}>
+                    <Link to={{ pathname: "/search", state: { type: "topic" } }}>
                         <div className="select">
                             <p><i className="icon ion-topic"></i> <span>添加话题</span> <i className="icon ion-angle-right"></i></p>
+                            {
+                                publish && publish.topic ?
+                                    <Tag word={publish.topic.topic} />
+                                    : ""
+                            }
                         </div>
                     </Link>
                     <button className="publish-submit" onClick={this.submit}>发布</button>
@@ -58,8 +77,9 @@ class Publish extends Component {
 }
 
 const mapStateToProps = state => {
-    const { appStatus, router } = state;
+    const { appStatus, router, publish } = state;
     return {
+        publish
     }
 };
 

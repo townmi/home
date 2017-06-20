@@ -8,6 +8,7 @@ import './search.scss';
 import { getSearch } from '../../libs/api';
 
 import { loading, loadSuccess, loadFail } from '../../store/actions/appStatus';
+import { addTopic, addVenues } from '../../store/actions/publish';
 
 class Search extends Component {
     constructor(props) {
@@ -73,17 +74,29 @@ class Search extends Component {
             search: e.target.value
         })
     }
-    handler() {
-        const { history } = this.props;
-        // console.log(history);
+    handler(cell) {
+        const { history, addTopic, addVenues } = this.props;
+        const { type } = this.state;
+        if (type === "venues") {
+            addVenues({
+                cell
+            });
+        } else {
+            addTopic({
+                cell
+            });
+        }
         history.goBack();
     }
     render() {
         const { type, input, search, searchPlaceholder, list } = this.state;
         const listStr = list.map((cell, index) => {
             return (
-                <li key={cell.id} onClick={this.handler}>
-                    <p>{cell.topic}</p>
+                <li key={cell.id} onClick={this.handler.bind(this, cell)}>
+                    <h4>{cell.topic}</h4>
+                    {
+                        type === "venues" ? <p>{cell.address}</p> : ""
+                    }
                 </li>
             )
         });
@@ -124,6 +137,12 @@ const mapDispatchToProps = (dispatch) => {
         },
         loadFail: () => {
             dispatch(loadFail())
+        },
+        addTopic: (cell) => {
+            dispatch(addTopic(cell))
+        },
+        addVenues: (cell) => {
+            dispatch(addVenues(cell))
         }
     }
 };

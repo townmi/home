@@ -7,16 +7,16 @@ let domain = "";
 
 switch (process.env.NODE_ENV) {
     case "development":
-        domain = "http://staging-app.ye-dian.com/dist/#!/";
+        domain = "http://staging-app.ye-dian.com/dist/";
         break;
     case "staging":
-        domain = "http://staging-app.ye-dian.com/dist/#!/";
+        domain = "http://staging-app.ye-dian.com/dist/";
         break;
     case "production":
-        domain = "http://prod-app.ye-dian.com/dist/#!/";
+        domain = "http://staging-app.ye-dian.com/dist/";
         break;
     default:
-        domain = "http://prod-app.ye-dian.com/dist/#!/";
+        domain = "http://staging-app.ye-dian.com/dist/";
         break;
 }
 

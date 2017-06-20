@@ -1,18 +1,21 @@
 .publish {
   width: 100%;
+  height: calc(100vh - 45px);
   box-sizing: border-box;
   padding: 10px;
-  // min-height: 100vh;
+  background-color: #ffffff;
   textarea {
     box-sizing: border-box;
     border: none;
-    height: 8em;
+    height: 6.5em;
     width: 100%;
-    background: #242a33;
-    color: #fff;
-    font-size: 12px;
-    padding: 10px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.625em;
+    padding: 0.625em;
     line-height: 1.5;
+    outline: none;
   }
   .publish-submit {
     // width: calc(100% - 36px);
@@ -24,5 +27,87 @@
     color: #ffffff;
     background-color: #0D213F;
     font-size: 18px;
+  }
+  .pics-box {
+    margin-bottom: 45px;
+    font-size: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    input[type='file'] {
+      visibility: hidden;
+    }
+    .pic {
+      &:nth-child(2) {
+        margin: 3px 2%;
+      }
+      &:nth-child(5) {
+        margin: 3px 2%;
+      }
+      &:nth-child(8) {
+        margin: 3px 2%;
+      }
+    }
+    .pic {
+      background-color: #56d432;
+    }
+    .file, .pic {
+      margin-top: 3px;
+      margin-bottom: 3px;
+      width: 32%;
+      height: 113px;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+    .file {
+      position: relative;
+      border: 1px dashed #CCCCCC;
+      cursor: pointer;
+      &:before, &:after {
+        content: " ";
+        width: 50%;
+        height: 3px;
+        background-color: #CCCCCC;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+      }
+      &:after {
+        left: 25%;
+        transform: rotate(-90deg);
+      }
+      input[type='file'] {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        z-index: 3;
+      }
+    }
+  }
+  .select {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E1E1E1;
+    p {
+      margin-bottom: 15px;
+      line-height: 1.2em;
+      font-size: 14px;
+      justify-content: space-between;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-weight: inherit;
+      color: #333333;
+      span {
+        width: 90%;
+        display: block;
+      }
+    }
   }
 }

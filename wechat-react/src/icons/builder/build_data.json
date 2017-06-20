@@ -1,9 +1,13 @@
 {
-  "build_hash": "b263d163e3b1a59eb15cc21c0ade3960",
+  "build_hash": "ee8fbc4aa94e0ce39928649aad863e3c",
   "prefix": "ion-",
   "version": "2.0.1",
   "name": "Ionicons",
   "icons": [
+    {
+      "code": "0xf155",
+      "name": "angle-right"
+    },
     {
       "code": "0xf13b",
       "name": "community"
@@ -45,8 +49,20 @@
       "name": "loading"
     },
     {
+      "code": "0xf156",
+      "name": "pencil"
+    },
+    {
       "code": "0xf21f",
       "name": "search"
+    },
+    {
+      "code": "0xf157",
+      "name": "search-square"
+    },
+    {
+      "code": "0xf153",
+      "name": "topic"
     },
     {
       "code": "0xf14e",
@@ -55,6 +71,10 @@
     {
       "code": "0xf14d",
       "name": "user-active"
+    },
+    {
+      "code": "0xf154",
+      "name": "venues-address"
     }
   ]
 }

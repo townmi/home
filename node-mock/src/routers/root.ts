@@ -1,5 +1,7 @@
 import { Router } from 'express'
 
+import * as jwt from 'jsonwebtoken';
+
 const sleep = (time) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -145,6 +147,21 @@ export default function rootRouter(app: Router) {
                     }
                 }
             })
+        }());
+    });
+
+    app.get('/token', function (req, res) {
+        (async function () {
+            await sleep(500);
+            // console.log(req);
+            const user = {
+                score: 77,
+                mobile: 13123456789,
+                ktvId: "5931268dab73a6e07c1f0b49",
+                uid: "123121233131"
+            };
+            const token = jwt.sign(user, 'NightPlusKmi');
+            return res.send(token);
         }());
     });
 } 

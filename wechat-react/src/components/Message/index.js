@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Link, withRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Avator from '../Avator';
 import CTABar from '../CTABar';
 import './message.scss';
@@ -29,7 +29,7 @@ class Message extends Component {
     }
 
     componentWillMount() {
-        const {profile, message, canLink} = this.props;
+        const { profile, message, canLink } = this.props;
 
         this.setState({
             profile: profile ? profile : defaultProfile,
@@ -39,7 +39,7 @@ class Message extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const {profile, message, canLink} = nextProps;
+        const { profile, message, canLink } = nextProps;
         this.setState({
             profile: profile ? profile : defaultProfile,
             message: message ? message : defaultMessage,
@@ -55,16 +55,17 @@ class Message extends Component {
     }
 
     render() {
-        const {profile, message, canLink} = this.state;
+        const { profile, message, canLink } = this.state;
+        const cellWidth = window.innerWidth > 414 ? (414 - 20) * 0.32 : (window.innerWidth - 20) * 0.32;
         let picturesList = "";
         if (message.pictures.length === 1) {
             picturesList = (
-                <img src={message.pictures[0]} alt=""/>
+                <img src={message.pictures[0]} alt="" />
             );
         } else if (message.pictures.length > 1) {
             picturesList = message.pictures.map((cell, index) => {
                 return (
-                    <div className="img-single" key={index} style={{backgroundImage: `url(${cell})`}}>
+                    <div className="img-single" key={index} style={{ backgroundImage: `url(${cell})`, height: `${cellWidth}px` }}>
                     </div>
                 )
             });
@@ -72,7 +73,7 @@ class Message extends Component {
         return (
             <div className="card-message">
                 <div className="card-message-top">
-                    <Avator profile={profile} showFollow={true} model={"default"}/>
+                    <Avator profile={profile} showFollow={true} model={"default"} />
                 </div>
                 {
                     !canLink ?
@@ -95,7 +96,7 @@ class Message extends Component {
                             </div>
                         </div>
                         :
-                        <Link className="card-message-content clearfix" to={{pathname: "message/1233"}}>
+                        <Link className="card-message-content clearfix" to={{ pathname: "message/1233" }}>
                             <h4>{message.description}</h4>
                             {
                                 message.pictures.length > 1 ?
@@ -124,7 +125,7 @@ class Message extends Component {
 }
 
 const mapStateToProps = state => {
-    const {router} = state;
+    const { router } = state;
     return {
         router
     }

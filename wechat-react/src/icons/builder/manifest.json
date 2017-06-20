@@ -1,5 +1,5 @@
 {
-  "build_hash": "2dab7798bb7f21ae3a4edf4e5805aade",
+  "build_hash": "07f64aac2ad87a9641508e61ec73d773",
   "prefix": "ion-",
   "version": "2.0.1",
   "name": "Ionicons",
@@ -523,6 +523,10 @@
     {
       "code": "0xf305",
       "name": "android-wifi"
+    },
+    {
+      "code": "0xf155",
+      "name": "angle-right"
     },
     {
       "code": "0xf313",
@@ -2341,6 +2345,10 @@
       "name": "pause"
     },
     {
+      "code": "0xf156",
+      "name": "pencil"
+    },
+    {
       "code": "0xf213",
       "name": "person"
     },
@@ -2475,6 +2483,10 @@
     {
       "code": "0xf21f",
       "name": "search"
+    },
+    {
+      "code": "0xf157",
+      "name": "search-square"
     },
     {
       "code": "0xf2ad",
@@ -2885,6 +2897,10 @@
       "name": "toggle-filled"
     },
     {
+      "code": "0xf153",
+      "name": "topic"
+    },
+    {
       "code": "0xf4f5",
       "name": "transgender"
     },
@@ -2935,6 +2951,10 @@
     {
       "code": "0xf14d",
       "name": "user-active"
+    },
+    {
+      "code": "0xf154",
+      "name": "venues-address"
     },
     {
       "code": "0xf256",

@@ -1,12 +1,21 @@
 .action-bar {
   position: fixed;
-  right: 6%;
-  bottom: calc(2% + 54px);
-  width: 54px;
-  height: 54px;
-  line-height: 54px;
+  right: 5.5%;
+  bottom: calc(2% + 50px);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .5);
-  background-color: #d42c3a;
+  box-shadow: 0 6px 14px 0 rgba(115, 68, 192, .73);
+  
+  background:-moz-linear-gradient(left top,#B33DE5,#3023AE);/*Mozilla*/
+  background:-webkit-linear-gradient(left top,#B33DE5,#3023AE);/*new gradient for Webkit*/
+  background:-o-linear-gradient(left top,#B33DE5,#3023AE); /*Opera11*/
+
+  font-size: 14px;
+  .icon {
+    font-size: 1.65em;
+    color: #ffffff;
+  }
 }

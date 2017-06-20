@@ -28,14 +28,23 @@ class Publish extends Component {
         return (
             <div className="publish" style={show ? { display: "block" } : { display: "none" }}>
                 <form action="">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <div>
-                        <input type="file"/>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Show出你的夜生活～"></textarea>
+                    <div className="pics-box">
+                        <div className="pic"></div>
+                        <div className="pic"></div>
+                        <div className="file">
+                            <input type="file" />
+                        </div>
                     </div>
-                    <Link to={{ pathname: "search" }}>
-                        <p>
-                            所在KTV／酒吧
-                        </p>
+                    <Link to={{ pathname: "/search", state: { type: "venues" } }}>
+                        <div className="select">
+                            <p><i className="icon ion-venues-address"></i> <span>所在地点</span> <i className="icon ion-angle-right"></i></p>
+                        </div>
+                    </Link>
+                    <Link to={{ pathname: "/search", state: { type: "topic" }  }}>
+                        <div className="select">
+                            <p><i className="icon ion-topic"></i> <span>添加话题</span> <i className="icon ion-angle-right"></i></p>
+                        </div>
                     </Link>
                     <button className="publish-submit" onClick={this.submit}>发布</button>
                 </form>

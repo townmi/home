@@ -9,7 +9,7 @@ export default class ActionBar extends Component {
     render() {
         return (
             <Link className="action-bar" to={{pathname: "publish"}}>
-                参与
+                <div className="icon ion-pencil"></div>
             </Link>
         )
     }

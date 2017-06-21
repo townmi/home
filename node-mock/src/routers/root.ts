@@ -182,10 +182,10 @@ export default function rootRouter(app: Router) {
             await sleep(500);
             // console.log(req);
             const user = {
-                score: 77,
-                mobile: 13123456789,
+                score: 76,
+                mobile: 18505102468,
                 ktvId: "5931268dab73a6e07c1f0b49",
-                uid: "123121233131"
+                uid: "1234567791"
             };
             const token = jwt.sign(user, 'NightPlusKmi');
             return res.send(token);

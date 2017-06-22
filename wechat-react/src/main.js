@@ -17,7 +17,6 @@ import createStore from './store';
 
 const store = createStore(history);
 
-
 class App extends Component {
 
     shouldComponentUpdate() {

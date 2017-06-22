@@ -33,7 +33,7 @@ class TabBar extends Component {
                     </a>
                 </div>
                 <div className="item-list">
-                    <Link to="/message/123" >
+                    <Link to={{ pathname: "/topic", state: { id: "abcd" } }}>
                         <div className="icon ion-list"></div>
                         <span className="text">预订</span>
                     </Link>

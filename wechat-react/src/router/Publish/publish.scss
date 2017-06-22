@@ -1,6 +1,7 @@
 .publish {
   width: 100%;
   height: calc(100vh - 45px);
+  overflow-y: scroll;
   box-sizing: border-box;
   padding: 10px;
   background-color: #ffffff;
@@ -37,9 +38,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     input[type='file'] {
-      visibility: hidden;
+      opacity: 0;
     }
     .pic {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
       &:nth-child(2) {
         margin: 3px 2%;
       }
@@ -85,6 +89,7 @@
         display: block;
         position: absolute;
         z-index: 3;
+
       }
     }
   }
@@ -96,14 +101,16 @@
       margin-bottom: 15px;
       line-height: 1.2em;
       font-size: 14px;
-      justify-content: space-between;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      font-weight: inherit;
       color: #333333;
+      a {
+        justify-content: space-between;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-weight: inherit;
+      }
       span {
         width: 90%;
         display: block;

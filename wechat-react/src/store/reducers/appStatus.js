@@ -3,10 +3,12 @@ import {
     APP_REQUEST_SUCCESS,
     APP_REQUEST_FAIL,
     APP_HIDE_BAR,
-    APP_SHOW_BAR
+    APP_SHOW_BAR,
+    APP_UNMOUNT_DELETE
 } from '../actions/appStatus';
 
 const appStatus = (state = { loading: false }, action) => {
+    console.log(action);
     switch (action.type) {
         case APP_REQUEST_LOADING:
             return {
@@ -27,6 +29,10 @@ const appStatus = (state = { loading: false }, action) => {
         case APP_SHOW_BAR:
             return {
                 ...state, loading: false, hideBar: false
+            }
+        case APP_UNMOUNT_DELETE:
+            return {
+                ...state, Unmount: true
             }
         default:
             return state

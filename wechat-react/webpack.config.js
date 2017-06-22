@@ -9,7 +9,7 @@ var webpackConfig = {
 	},
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		publicPath: '/',
+		publicPath: '/dist/',
 		filename: `[name].[hash:8].js`
 	},
 	resolve: {
@@ -69,18 +69,16 @@ var webpackConfig = {
 	devServer: {
 		compress: true,
 		port: 9001,
-		historyApiFallback: true,
+		contentBase: path.join(__dirname, "dist"),
+		historyApiFallback: {
+			index: "/dist/"
+		},
 		noInfo: true
 	},
 	devtool: '#eval-source-map',
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor'
-		}),
-		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: '"development"'
-			}
 		}),
         new HtmlWebpackPlugin({
             template: './src/index.html',
@@ -94,15 +92,24 @@ var webpackConfig = {
 			title: 'wechat-dev'
         })
 	]
+		
+}
+
+if (process.env.NODE_ENV === 'development') {
+	webpackConfig.plugins = (webpackConfig.plugins || []).concat([
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify('development')
+			}
+		})
+	])
 }
 
 if (process.env.NODE_ENV === 'production') {
 	delete webpackConfig.devtool;
 	webpackConfig.plugins = (webpackConfig.plugins || []).concat([
 		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: '"production"'
-			}
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
 		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
@@ -115,6 +122,7 @@ if (process.env.NODE_ENV === 'production') {
 			minimize: true
 		})
 	])
+	
 }
 
 module.exports = webpackConfig;

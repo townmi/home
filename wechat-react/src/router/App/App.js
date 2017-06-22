@@ -14,6 +14,7 @@ import Community from '../Community/Community';
 import CommunityInfo from '../CommunityInfo/CommunityInfo';
 import Publish from '../Publish/Publish';
 import Search from '../Search/Search';
+import Topic from '../Topic/Topic';
 
 import TabBar from '../../components/TabBar';
 import Loading from '../../components/Loading';
@@ -41,13 +42,13 @@ class Bootstrap extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
         this.setState({
             loading: nextProps.loading,
             hideBar: nextProps.hideBar,
             router: nextProps.router
         });
     }
-
     componentDidMount() {
     }
 
@@ -56,11 +57,11 @@ class Bootstrap extends Component {
         const { loading, hideBar } = this.state;
         const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
         return (
-            <Router>
+            <div>
                 <Route render={({ location }) => (
-                    <div className={key} style={{ width: `${cellWidth}px` }}>
-                        <Route exact path="/" render={() => (
-                            <Redirect to="/community" />
+                    <div className={hideBar ? `${key} no-tab-bar` : key} style={{ width: `${cellWidth}px` }}>
+                        <Route exact path="/dist" render={() => (
+                            <Redirect to="/dist/community" />
                         )} />
                         {
                             hideBar ? "" : <TabBar />
@@ -72,10 +73,11 @@ class Bootstrap extends Component {
                             transitionLeaveTimeout={300}
                         >
                             <Switch key={location.key} location={location}>
-                                <Route path="/community" component={Community} />
-                                <Route path="/message/:id" component={CommunityInfo} />
-                                <Route path="/publish" component={Publish} />
-                                <Route path="/search" component={Search} />
+                                <Route exact path="/dist/community" component={Community} />
+                                <Route exact path="/dist/message/:id" component={CommunityInfo} />
+                                <Route exact path="/dist/publish" component={Publish} />
+                                <Route exact path="/dist/search" component={Search} />
+                                <Route exact path="/dist/topic" component={Topic} />
                             </Switch>
                         </CSSTransitionGroup>
                         {
@@ -83,7 +85,7 @@ class Bootstrap extends Component {
                         }
                     </div>
                 )} />
-            </Router>
+            </div>
         )
     }
 }

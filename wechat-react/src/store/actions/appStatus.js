@@ -29,4 +29,4 @@ export const showBar = state => ({
 export const hideBar = state => ({
     type: APP_HIDE_BAR,
     state
-})
+});

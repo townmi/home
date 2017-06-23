@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Message from '../../components/Message';
 import VenuesCell from '../../components/VenuesCell';
@@ -45,7 +46,9 @@ class CommunityInfo extends Component {
 			<div className="community-info-box">
 				<div className="community-info">
 					<Message profile={messageInfo.profile} message={messageInfo.message} canLink={false} />
-					<VenuesCell />
+					<a href={`http://staging-app.ye-dian.com/dist/?#!/ktv/59281d23b5e3cf15cd65a88c`}>
+						<VenuesCell />
+					</a>
 				</div>
 				<Comment />
 			</div>

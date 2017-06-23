@@ -154,7 +154,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/search', function (req, res) {
         (async function () {
-            await sleep(2500);
+            await sleep(500);
             return res.send({
                 "code": 200,
                 "total": 2,

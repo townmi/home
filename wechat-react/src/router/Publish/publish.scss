@@ -42,10 +42,7 @@
     input[type='file'] {
       opacity: 0;
     }
-    .pic {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
+    &>div {
       &:nth-child(2) {
         margin: 3px 2%;
       }
@@ -55,6 +52,11 @@
       &:nth-child(8) {
         margin: 3px 2%;
       }
+    }
+    .pic {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
     }
     .pic {
       background-color: #56d432;

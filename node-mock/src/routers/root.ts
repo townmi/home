@@ -31,7 +31,7 @@ export default function rootRouter(app: Router) {
                         "link": "",
                         "articleCount": 662,
                         "memberCount": 1233,
-                        "topicBannerPic": "http://prod-app.ye-dian.com/dist/assets/img/0607.jpg"
+                        "topicBannerPic": "http://production.ye-dian.com//uploads/image/20170614/20170614114659_57916.jpeg"
                     }
                 ]
             })
@@ -142,6 +142,8 @@ export default function rootRouter(app: Router) {
                             "http://onq4xhob0.bkt.clouddn.com/bdc270ac6e5642b880b60b002e3a81a6.jpeg",
                             "http://onq4xhob0.bkt.clouddn.com/bdc270ac6e5642b880b60b002e3a81a6.jpeg",
                             "http://onq4xhob0.bkt.clouddn.com/bdc270ac6e5642b880b60b002e3a81a6.jpeg",
+                            "http://onq4xhob0.bkt.clouddn.com/bdc270ac6e5642b880b60b002e3a81a6.jpeg",
+                            "http://onq4xhob0.bkt.clouddn.com/bdc270ac6e5642b880b60b002e3a81a6.jpeg",
                             "http://onq4xhob0.bkt.clouddn.com/bdc270ac6e5642b880b60b002e3a81a6.jpeg"
                         ]
                     }
@@ -152,7 +154,7 @@ export default function rootRouter(app: Router) {
 
     app.get('/search', function (req, res) {
         (async function () {
-            await sleep(500);
+            await sleep(2500);
             return res.send({
                 "code": 200,
                 "total": 2,
@@ -182,10 +184,10 @@ export default function rootRouter(app: Router) {
             await sleep(500);
             // console.log(req);
             const user = {
-                score: 75,
-                mobile: 13212345678,
+                score: 76.5,
+                mobile: 13212345578,
                 ktvId: "5931268dab73a6e07c1f0b49",
-                uid: "123456127462"
+                uid: "1234561274622222"
             };
             const token = jwt.sign(user, 'NightPlusKmi');
             return res.send(token);

@@ -24,11 +24,11 @@ const appStatus = (state = { loading: false }, action) => {
             }
         case APP_HIDE_BAR:
             return {
-                ...state, loading: false, hideBar: true
+                ...state, hideBar: true
             }
         case APP_SHOW_BAR:
             return {
-                ...state, loading: false, hideBar: false
+                ...state, hideBar: false
             }
         case APP_UNMOUNT_DELETE:
             return {

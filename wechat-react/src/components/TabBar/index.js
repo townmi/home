@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './tabBar.scss';
 
 let domain = "";
@@ -33,19 +33,19 @@ class TabBar extends Component {
                     </a>
                 </div>
                 <div className="item-list">
-                    <Link to={{ pathname: "/topic", state: { id: "abcd" } }}>
+                    <Link to={{ pathname: `${BASENAME}topic`, state: { id: "abcd" } }}>
                         <div className="icon ion-list"></div>
                         <span className="text">预订</span>
                     </Link>
                 </div>
-                <div className="item-community">
-                    <Link to="/community" >
-                        <div className="icon ion-community"></div>
+                <div className="item-community active">
+                    <Link to={{ pathname: `${BASENAME}community` }}>
+                        <div className="icon ion-community-active"></div>
                         <span className="text">社区</span>
                     </Link>
                 </div>
                 <div className="item-user">
-                    <Link to="/publish" >
+                    <Link to={{ pathname: `${BASENAME}publish` }} >
                         <div className="icon ion-user"></div>
                         <span className="text">我的</span>
                     </Link>

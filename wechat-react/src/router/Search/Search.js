@@ -53,7 +53,6 @@ class Search extends Component {
             });
         }, error => {
             loadFail();
-            console.log(error);
         });
     }
     focus() {

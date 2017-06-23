@@ -65,7 +65,7 @@ export default class Carousel extends Component {
     }
 
     render() {
-        const cellWidth = window.innerWidth > 375 ? 375 : window.innerWidth;
+        const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
         const slide = (slides) => {
             const { currentIndex } = this.state;
             let { element, enterDelay, leaveDelay, animation } = this.props;

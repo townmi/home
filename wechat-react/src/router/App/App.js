@@ -7,7 +7,6 @@ import {
     withRouter
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import Community from '../Community/Community';
@@ -15,6 +14,7 @@ import CommunityInfo from '../CommunityInfo/CommunityInfo';
 import Publish from '../Publish/Publish';
 import Search from '../Search/Search';
 import Topic from '../Topic/Topic';
+import NotFound from '../NotFound/NotFound';
 
 import TabBar from '../../components/TabBar';
 import Loading from '../../components/Loading';
@@ -42,7 +42,7 @@ class Bootstrap extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
+        // console.log(nextProps);
         this.setState({
             loading: nextProps.loading,
             hideBar: nextProps.hideBar,
@@ -53,15 +53,28 @@ class Bootstrap extends Component {
     }
 
     render() {
-        const key = "app";
-        const { loading, hideBar } = this.state;
+        let key = "app";
+        const { loading, hideBar, router } = this.state;
+        const pathname = router && router.location.pathname;
         const cellWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
+
+        switch (pathname) {
+            case `${BASENAME}publish`:
+                key = "app-search";
+                break;
+            case `${BASENAME}search`:
+                key = "app-search";
+                break;
+            default:
+                key = "app";
+                break;
+        }
         return (
             <div>
                 <Route render={({ location }) => (
                     <div className={hideBar ? `${key} no-tab-bar` : key} style={{ width: `${cellWidth}px` }}>
-                        <Route exact path="/dist" render={() => (
-                            <Redirect to="/dist/community" />
+                        <Route exact path={BASENAME} render={() => (
+                            <Redirect to={`${BASENAME}community`} />
                         )} />
                         {
                             hideBar ? "" : <TabBar />
@@ -73,11 +86,12 @@ class Bootstrap extends Component {
                             transitionLeaveTimeout={300}
                         >
                             <Switch key={location.key} location={location}>
-                                <Route exact path="/dist/community" component={Community} />
-                                <Route exact path="/dist/message/:id" component={CommunityInfo} />
-                                <Route exact path="/dist/publish" component={Publish} />
-                                <Route exact path="/dist/search" component={Search} />
-                                <Route exact path="/dist/topic" component={Topic} />
+                                <Route exact path={`${BASENAME}community`} component={Community} name="community"/>
+                                <Route exact path={`${BASENAME}message/:id`} component={CommunityInfo}  name="message"/>
+                                <Route exact path={`${BASENAME}publish`} component={Publish}  name="publish"/>
+                                <Route exact path={`${BASENAME}search`} component={Search}  name="search"/>
+                                <Route exact path={`${BASENAME}topic`} component={Topic}  name="topic"/>
+                                <Route path={`${BASENAME}*`} component={NotFound}  name="notfound"/>
                             </Switch>
                         </CSSTransitionGroup>
                         {

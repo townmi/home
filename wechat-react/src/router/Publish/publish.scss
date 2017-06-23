@@ -1,6 +1,7 @@
 .publish {
   width: 100%;
-  height: calc(100vh - 45px);
+  // height: calc(100vh - 45px);
+  height: 100vh;
   overflow-y: scroll;
   box-sizing: border-box;
   padding: 10px;
@@ -19,15 +20,16 @@
     outline: none;
   }
   .publish-submit {
-    // width: calc(100% - 36px);
+    max-width: 414px;
     width: 100%;
     height: 50px;
     position: fixed;
-    left: 0;
+    left: 50%;
     bottom: 0;
     color: #ffffff;
     background-color: #0D213F;
     font-size: 18px;
+    transform: translateX(-50%);
   }
   .pics-box {
     margin-bottom: 45px;
@@ -97,7 +99,7 @@
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #E1E1E1;
-    p {
+    ._cell {
       margin-bottom: 15px;
       line-height: 1.2em;
       font-size: 14px;
@@ -116,5 +118,8 @@
         display: block;
       }
     }
+  }
+  .publish-form {
+    margin-bottom: 80px;
   }
 }

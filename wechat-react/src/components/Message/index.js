@@ -96,7 +96,7 @@ class Message extends Component {
                             </div>
                         </div>
                         :
-                        <Link className="card-message-content clearfix" to={{ pathname: "message/1233" }}>
+                        <Link className="card-message-content clearfix" to={{ pathname: `${BASENAME}message/123` }}>
                             <h4>{message.description}</h4>
                             {
                                 message.pictures.length > 1 ?
@@ -111,7 +111,7 @@ class Message extends Component {
                         </Link>
                 }
                 {
-                    <div className={canLink ? "card-message-bottom" : "card-message-bottom fix"}>
+                    <div className={"card-message-bottom"}>
                         <CTABar fix={canLink} />
                     </div>
                 }

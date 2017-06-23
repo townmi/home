@@ -35,7 +35,6 @@
   }
   .avator {
     float: left;
-    display: inline-block;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .5);
     border-radius: 50%;
     background-size: contain;
@@ -48,6 +47,7 @@
       display: block;
       padding-bottom: 3px;
       color: #333333;
+      font-weight: normal;
     }
     p {
       padding-top: 3px;
@@ -76,21 +76,21 @@
       display: block;
     }
     .profile {
+      margin: 5px auto 10px;
       strong {
         font-size: 15px;
         color: #333333;
-        line-height: 1.2em;
+        line-height: 1.4em;
       }
       p {
-
+        color: #999999;
+        font-size: 12px;
+        line-height: 1.35em;
       }
     }
     .follow-box {
       text-align: center;
       position: static;
     }
-  }
-  &.horizontal {
-
   }
 }

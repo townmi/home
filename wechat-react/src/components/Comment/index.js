@@ -18,8 +18,11 @@ export default class VenuesCell extends Component {
         return (
             <div className="comment">
                 <div className="_title">夜猫子们评论</div>
-                <div className="_top-enter">
-                    <Avator/>
+                <div className="_top-enter clearfix">
+                    <div className="user-self">
+                        <Avator/>
+                    </div>
+                    <div className="input-enter">我也要留下一评</div>
                 </div>
                 <ul className="comment-content">
                     <li className="cell">

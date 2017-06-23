@@ -22,11 +22,11 @@ if (process.env.NODE_ENV === "development") {
 export const API_ROOT = {
     weChatAuth: userApiDomain + "/auth/wechat?",
     getUserInfo: userApiDomain + "/internal/userInfo?_type=User",
-    getTopicBanner: "http://127.0.0.1:4003/",
-    getIndexMessage: "http://127.0.0.1:4003/community",
-    getIndexUserList: "http://127.0.0.1:4003/userlist",
-    getMessageInfo: "http://127.0.0.1:4003/message",
-    getSearch: "http://127.0.0.1:4003/search"
+    getTopicBanner: `http://${process.env.IP}:4003/`,
+    getIndexMessage: `http://${process.env.IP}:4003/community`,
+    getIndexUserList: `http://${process.env.IP}:4003/userlist`,
+    getMessageInfo: `http://${process.env.IP}:4003/message`,
+    getSearch: `http://${process.env.IP}:4003/search`
 }
 
 export const enums = {

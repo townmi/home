@@ -2,6 +2,19 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var getIPAdress = function (){  
+    var interfaces = require('os').networkInterfaces();  
+    for(var devName in interfaces){  
+          var iface = interfaces[devName];  
+          for(var i=0;i<iface.length;i++){  
+               var alias = iface[i];  
+               if(alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){  
+                     return alias.address;  
+               }  
+          }  
+    }  
+}
+
 var webpackConfig = {
 	entry: {
 		app: './src/app.js',
@@ -44,25 +57,16 @@ var webpackConfig = {
 				options: {
 					limit: 1024,
 					prefix: 'font/'
-					// name: 'fonts/[name].[ext]'
 				}
 			},
 			{
 				test: /\.(ico|png|jpg|svg)$/,
-				include: /client\/resources\/images/,
-				loader: 'url-loader',
+				include: /assets\/images/,
+				loader: 'file-loader',
 				options: {
 					limit: 10240,
-					name: 'images/[name].[ext]?v=[hash:base64:5]'
+					name: '/assets/images/[name].[ext]?v=[hash:base64:5]'
 				}
-			},
-			{
-				test: /\.svg$/,
-				include: /client\/resources\/icons/,
-				loaders: [
-					'babel-loader',
-					'svg-react-loader'
-				]
 			}
 		]
 	},
@@ -100,7 +104,9 @@ if (process.env.NODE_ENV === 'development') {
 		new webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: JSON.stringify('development')
-			}
+			},
+			BASENAME: JSON.stringify("/dist/"),
+			'process.env.IP': JSON.stringify(getIPAdress())
 		})
 	])
 }
@@ -109,7 +115,9 @@ if (process.env.NODE_ENV === 'production') {
 	delete webpackConfig.devtool;
 	webpackConfig.plugins = (webpackConfig.plugins || []).concat([
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+			BASENAME: JSON.stringify("/dist/"),
+			'process.env.IP': JSON.stringify(getIPAdress())
 		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {

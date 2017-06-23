@@ -26,7 +26,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <ConnectedRouter history={history}>
+                <ConnectedRouter history={history} basename={BASENAME}>
                     <Bootstrap />
                 </ConnectedRouter>
             </Provider>

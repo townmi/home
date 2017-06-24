@@ -57,5 +57,8 @@ module.exports = {
         "no-array-constructor": 2,
         "no-class-assign": 2,
         "no-cond-assign": 2
+    },
+    "globals": {
+        "BASENAME": true
     }
 };

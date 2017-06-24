@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "development") {
 
 export const API_ROOT = {
     weChatAuth: userApiDomain + "/auth/wechat?",
-    getUserInfo: userApiDomain + "/internal/userInfo?_type=User",
+    getUserInfo: userApiDomain + "/internal/userInfo?_type=UserTimeLine",
     getTopicBanner: `http://${process.env.IP}:4003/`,
     getIndexMessage: `http://${process.env.IP}:4003/community`,
     getIndexUserList: `http://${process.env.IP}:4003/userlist`,

@@ -42,7 +42,7 @@
     input[type='file'] {
       opacity: 0;
     }
-    &>div {
+    & > div {
       &:nth-child(2) {
         margin: 3px 2%;
       }
@@ -123,5 +123,28 @@
   }
   .publish-form {
     margin-bottom: 80px;
+  }
+  .venues-box {
+    overflow: hidden;
+  }
+  .venues-holder {
+    position: relative;
+    transition: all 0.2s cubic-bezier(1, 0.3, 1, 1);
+    .remove {
+      width: 70px;
+      height: 100%;
+      background-color: #B33DE5;
+      position: absolute;
+      top: 0;
+      right: -70px;
+      text-align: center;
+      font-size: 16px;
+      color: #ffffff;
+      line-height: 62px;
+    }
+    &.show-remove {
+      transform: translateX(-70px);
+
+    }
   }
 }

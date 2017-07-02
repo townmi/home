@@ -4,8 +4,10 @@ import {
 	Text,
 	Image,
 	StyleSheet,
-	StatusBar
+	StatusBar,
+	ScrollView
 } from 'react-native';
+import Header from '../../components/Header';
 
 class UserScreen extends Component {
 	static navigationOptions = {
@@ -24,7 +26,10 @@ class UserScreen extends Component {
 				<StatusBar
 					hidden={false}
 				/>
-				<Text>我的</Text>
+				<Header title='我的'/>
+				<ScrollView>
+					<Text>精选</Text>
+				</ScrollView>
 			</View>
 		);
 	}

@@ -2,61 +2,21 @@ import React, { Component } from 'react';
 import {
   Dimensions,
   StatusBar,
+  ScrollView,
   Text,
   View
 } from 'react-native';
-import { StackNavigator, TabNavigator, DrawerNavigator, DrawerView } from 'react-navigation';
+import { StackNavigator, TabNavigator, DrawerNavigator, DrawerView, DrawerItems } from 'react-navigation';
 
-import DrawerCustomer from './components/DrawerCustomer';
+// import DrawerSidebar from './components/DrawerCustomer';
 
 import Login from './routers/Login';
 import IndexScreen from './routers/IndexScreen';
 import UserScreen from './routers/UserScreen';
 
-const SideDrawer = (props) => (
-  <View>
-    <StatusBar
-      backgroundColor={'gray'}
-      barStyle="light-content"
-    />
-    <View>
-      <Text>xxxxx</Text>
-      <Text>{123}</Text>
-      <Text>{456}</Text>
-    </View>
-    <DrawerView.Items {...this.props} />
-  </View>
-);
+// alert(DrawerSidebar)
 
-const options = {
-  initialRouteName: 'Index',
-  order: ['Index', 'User'],
-  contentComponent: props => (<View>
-      <StatusBar
-        backgroundColor={'gray'}
-        barStyle="light-content"
-      />
-      <View>
-        <Text>xxxxx</Text>
-        <Text>{123}</Text>
-        <Text>{456}</Text>
-      </View>
-      <DrawerView.Items {...this.props} />
-    </View>)
-  ,
-  contentOptions: {
-    activeTintColor: '#ffffff',
-    activeBackgroundColor: 'gray',
-    inactiveTintColor: '#ffffff',
-    style: {
-      marginVertical: 0,
-    }
-  },
-  drawerWidth: Dimensions.get('window').width - 119,
-  style: {
-    paddingTop: 0,
-  },
-};
+// const options = ;
 
 const Home = DrawerNavigator({
   Index: {
@@ -65,7 +25,22 @@ const Home = DrawerNavigator({
   User: {
     screen: UserScreen,
   },
-}, options);
+}, {
+    initialRouteName: 'Index',
+    order: ['Index', 'User'],
+    contentOptions: {
+      activeTintColor: '#ffffff',
+      activeBackgroundColor: 'gray',
+      inactiveTintColor: '#ffffff',
+      style: {
+        marginVertical: 0,
+      }
+    },
+    drawerWidth: Dimensions.get('window').width * 2 / 3,
+    style: {
+      paddingTop: 0,
+    }
+  });
 
 
 const App = StackNavigator(

@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-import { DrawerItems } from 'react-navigation';
+import { DrawerItems, DrawerView } from 'react-navigation';
 import {
   View,
   Text,
+  Dimensions,
+  StatusBar,
   StyleSheet
 } from 'react-native';
 
-const CustomDrawerContentComponent = (props) => (
-  <View style={styles.container}>
-    <Text>xxxxxxx</Text>
-    <DrawerItems {...props} />
-  </View>
-);
+class DrawerSidebar extends Component {
+  render() {
+    return (
+      <View>
+        <StatusBar
+          backgroundColor={'gray'}
+          barStyle="light-content"
+        />
+        <View>
+          <Text>xxxxx</Text>
+          <Text>{123}</Text>
+          <Text>{456}</Text>
+        </View>
+        <DrawerView.Items {...this.props} />
+      </View>
+    )
+  }
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -19,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomDrawerContentComponent;
+export default DrawerSidebar;

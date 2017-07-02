@@ -9,6 +9,7 @@ import {
 
 class UserScreen extends Component {
 	static navigationOptions = {
+		title: '我的',
 		drawerLabel: '我的',
 		drawerIcon: ({ tintColor }) => (
 			<Image

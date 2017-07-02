@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/townmi/github/home/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/welcome.png",
+        "source": "/Users/townmi/github/home/android/app/src/main/res/mipmap-xxhdpi/welcome.png"
+    },
+    {
         "merged": "/Users/townmi/github/home/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/Users/townmi/github/home/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }

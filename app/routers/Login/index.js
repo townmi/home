@@ -9,7 +9,7 @@ import {
 	Dimensions
 } from 'react-native';
 
-class WelcomeScreen extends Component {
+class Login extends Component {
 	static navigationOptions = {
 		title: 'Welcome',
 	};
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default WelcomeScreen;
+export default Login;

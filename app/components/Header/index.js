@@ -13,7 +13,6 @@ class Header extends Component {
 		super(props)
 	}
 	left() {
-
 	}
 	right() {
 	}

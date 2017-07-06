@@ -4,7 +4,8 @@ import {
   StatusBar,
   ScrollView,
   Text,
-  View
+  View,
+  Platform
 } from 'react-native';
 import { StackNavigator, TabNavigator, DrawerNavigator, DrawerView, DrawerItems } from 'react-navigation';
 
@@ -14,18 +15,18 @@ import Login from './routers/Login';
 import IndexScreen from './routers/IndexScreen';
 import UserScreen from './routers/UserScreen';
 
-// alert(DrawerSidebar)
+alert()
 
-// const options = ;
-
-const Home = DrawerNavigator({
+const options = {
   Index: {
     screen: IndexScreen,
   },
   User: {
     screen: UserScreen,
   },
-}, {
+};
+
+const Home = Platform.OS === 'ios' ? TabNavigator(options, {
     initialRouteName: 'Index',
     order: ['Index', 'User'],
     contentOptions: {
@@ -35,12 +36,23 @@ const Home = DrawerNavigator({
       style: {
         marginVertical: 0,
       }
-    },
-    drawerWidth: Dimensions.get('window').width * 2 / 3,
-    style: {
-      paddingTop: 0,
     }
-  });
+  }) : DrawerNavigator(options, {
+      initialRouteName: 'Index',
+      order: ['Index', 'User'],
+      contentOptions: {
+        activeTintColor: '#ffffff',
+        activeBackgroundColor: 'gray',
+        inactiveTintColor: '#ffffff',
+        style: {
+          marginVertical: 0,
+        }
+      },
+      drawerWidth: Dimensions.get('window').width * 2 / 3,
+      style: {
+        paddingTop: 0,
+      }
+    });
 
 
 const App = StackNavigator(

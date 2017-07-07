@@ -20,21 +20,7 @@ class Header extends Component {
 		const { title } = this.props;
 		return (
 			<View style={styles.container}>
-				<TouchableHighlight
-					onPress={this.left}
-					title="left"
-					style={styles.left}
-					accessibilityLabel="This sounds great!">
-					<Text>L</Text>
-				</TouchableHighlight>
 				<Text style={styles.title}>{title}</Text>
-				<TouchableHighlight
-					onPress={this.right}
-					title="right"
-					style={styles.right}
-					accessibilityLabel="This sounds great!">
-					<Text>R</Text>
-				</TouchableHighlight>
 			</View>
 		)
 	}
@@ -42,24 +28,18 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		height: 40,
+		height: 42,
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: 'red'
+		backgroundColor: '#28282d'
 
 	},
-	left: {
-		flex: 1,
-		backgroundColor: 'red'
-	},
 	title: {
-		flex: 8,
-		textAlign: 'center'
-	},
-	right: {
 		flex: 1,
-		backgroundColor: 'transparent'
+		textAlign: 'center',
+		color: '#ffffff',
+		fontSize: 16
 	}
 });
 

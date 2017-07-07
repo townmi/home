@@ -6,38 +6,62 @@ import {
 	Button,
 	StyleSheet,
 	StatusBar,
-	ScrollView
+	ScrollView,
+	Dimensions
 } from 'react-native';
 import Header from '../../components/Header';
+import Icon from "../../assets/icons/icons";
 
 class IndexScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
+		tabBarLabel: '精选',
 		title: '精选',
-		headerRight: <Button color={'red'} title="Press Me" onPress={this.ButtonPress} />,
+		tabBarIcon: ({ tintColor }) => {
+			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF13C' : 'uniF145';
+			return (
+				<Text style={{ fontFamily: 'ionicons', fontSize: 20, color: tintColor }}>
+					{Icon(icon)}
+				</Text>
+			)
+		},
 	});
 	ButtonPress() {
 		this.props.navigation.navigate.goBack();
 	}
 	render() {
 		return (
-			<View>
+			<View style={styles.box}>
 				<StatusBar
+					animated={true}
 					hidden={false}
+					backgroundColor={'#19191d'}
+					translucent={true}
+					barStyle={'light-content'}
+					showHideTransition={'fade'}
+					networkActivityIndicatorVisible={true}
 				/>
-				<Header />
-				<ScrollView>
-					<Text>精选</Text>
-				</ScrollView>
+				<Header title='精选' />
+				<View style={styles.container}>
+					<ScrollView>
+						<View>
+							<Text>精选</Text>
+						</View>
+					</ScrollView>
+				</View>
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
-	icon: {
-		width: 24,
-		height: 24,
+	box: {
+		paddingTop: 20,
+		backgroundColor: '#19191d'
 	},
+	container: {
+		height: Dimensions.get('window').height-112,
+		backgroundColor: '#ffffff'
+	}
 });
 
 export default IndexScreen;

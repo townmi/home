@@ -14,6 +14,8 @@ import { StackNavigator, TabNavigator, DrawerNavigator, DrawerView, DrawerItems 
 import Login from './routers/Login';
 import IndexScreen from './routers/IndexScreen';
 import UserScreen from './routers/UserScreen';
+import ListScreen from './routers/ListScreen';
+import CommunityScreen from './routers/CommunityScreen';
 
 alert()
 
@@ -24,18 +26,31 @@ const options = {
   User: {
     screen: UserScreen,
   },
+  List: {
+    screen: ListScreen,
+  },
+  Community: {
+    screen: CommunityScreen,
+  },
 };
 
 const Home = Platform.OS === 'ios' ? TabNavigator(options, {
     initialRouteName: 'Index',
-    order: ['Index', 'User'],
-    contentOptions: {
-      activeTintColor: '#ffffff',
-      activeBackgroundColor: 'gray',
-      inactiveTintColor: '#ffffff',
+    tabBarPosition: 'bottom',
+    animationEnabled: true,
+    swipeEnabled: true,
+    order: ['Index', 'List', 'Community', 'User'],
+    tabBarOptions: {
+      activeTintColor: 'rgba(255, 255, 255, 1)',
+      inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+      labelStyle: {
+        fontSize: 12,
+      },
       style: {
-        marginVertical: 0,
-      }
+        paddingBottom: 3,
+        paddingTop: 3,
+        backgroundColor: '#19191d',
+      },
     }
   }) : DrawerNavigator(options, {
       initialRouteName: 'Index',
@@ -57,11 +72,11 @@ const Home = Platform.OS === 'ios' ? TabNavigator(options, {
 
 const App = StackNavigator(
   {
-    Login: {
-      screen: Login,
-    },
     Home: {
       screen: Home,
+    },
+    Login: {
+      screen: Login,
     }
   },
   {

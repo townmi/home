@@ -3,26 +3,30 @@ import {
 	View,
 	Text,
 	Image,
+	Button,
 	StyleSheet,
 	StatusBar,
 	ScrollView,
 	Dimensions
 } from 'react-native';
-import Icon from "../../assets/icons/icons";
 import Header from '../../components/Header';
+import Icon from "../../assets/icons/icons";
 
-class UserScreen extends Component {
+class ListScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
-		tabBarLabel: '我的',
+		tabBarLabel: '预订',
 		tabBarIcon: ({ tintColor }) => {
-			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF14D': 'uniF14E';
+			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF146': 'uniF14C';
 			return (
 				<Text style={{ fontFamily: 'ionicons', fontSize: 20, color: tintColor }}>
 					{Icon(icon)}
 				</Text>
 			)
-		},
+		}
 	});
+	ButtonPress() {
+		this.props.navigation.navigate.goBack();
+	}
 	render() {
 		return (
 			<View style={styles.box}>
@@ -35,10 +39,12 @@ class UserScreen extends Component {
 					showHideTransition={'fade'}
 					networkActivityIndicatorVisible={true}
 				/>
-				<Header title='我的'/>
+				<Header title='预订'/>
 				<View style={styles.container}>
 					<ScrollView>
-						<Text>精选</Text>
+						<View style={styles.view}>
+							<Text>精选</Text>
+						</View>
 					</ScrollView>
 				</View>
 			</View>
@@ -57,4 +63,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default UserScreen;
+export default ListScreen;

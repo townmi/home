@@ -32,8 +32,7 @@ export default class OperatorController extends BaseControler {
         try {
             let body = `{
             "role": "bd",
-            "mobile":"${this.http.req.body.mobile}",
-            "cityId":"${(this.http.req.headers['x-cityId'] && (this.http.req.headers['x-cityId'].split(',')).length === 1) ? this.http.req.headers['x-cityId'] : ' '}"
+            "mobile":"${this.http.req.body.mobile}"
           }`
 
             let response = await this.OperatorService.create(body)
@@ -120,7 +119,7 @@ export default class OperatorController extends BaseControler {
         //let query: string = `{"query": "query{user(_type:\\"Operator\\"){count,rows{ id,cityId}}}" } `
         this.logger.info(`getList: query:  `, this.http.req.query)
         try {
-            let allRole = this.http.req.headers['x-role'].split(',')
+            let allRole = '';
             let roleConfig = config.get('role')
             let currentRole  // 当前角色
             // let allRole = 'bd,other-role'.split(',')

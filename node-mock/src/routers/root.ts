@@ -185,11 +185,13 @@ export default function rootRouter(app: Router) {
             // console.log(req);
             const user = {
                 score: 76.5,
-                mobile: 13212345578,
+                mobile: 13212345678,
                 ktvId: "5931268dab73a6e07c1f0b49",
-                uid: "1234561274622222"
+                uid: "12345612745242"
             };
-            const token = jwt.sign(user, 'NightPlusKmi');
+            // ddf43021f9c38fc175c1259ac4578eec
+            // NightPlusKmi
+            const token = jwt.sign(user, 'ddf43021f9c38fc175c1259ac4578eec');
             return res.send(token);
         }());
     });

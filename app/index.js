@@ -12,11 +12,14 @@ import { StackNavigator, TabNavigator, DrawerNavigator, DrawerView, DrawerItems 
 // import DrawerSidebar from './components/DrawerCustomer';
 
 import Login from './routers/Login';
+
 import IndexScreen from './routers/IndexScreen';
 import UserScreen from './routers/UserScreen';
 import ListScreen from './routers/ListScreen';
 import CommunityScreen from './routers/CommunityScreen';
+
 import Search from './routers/Search';
+import ScanScreen from './routers/ScanScreen';
 
 
 const options = {
@@ -37,7 +40,7 @@ const options = {
 const Home = Platform.OS === 'ios' ? TabNavigator(options, {
     initialRouteName: 'Index',
     tabBarPosition: 'bottom',
-    animationEnabled: true,
+    animationEnabled: false,
     swipeEnabled: true,
     order: ['Index', 'List', 'Community', 'User'],
     tabBarOptions: {
@@ -80,6 +83,9 @@ const App = StackNavigator(
     },
     Search: {
       screen: Search
+    },
+    ScanScreen: {
+      screen: ScanScreen
     }
   },
   {

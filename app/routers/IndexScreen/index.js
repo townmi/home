@@ -47,10 +47,13 @@ class IndexScreen extends Component {
 			.then((responseJson) => {
 				self.setState({
 					banners: responseJson.data
-				})
-				alert(JSON.stringify(responseJson.data));
+				});
 			})
 			.catch(e => { console.log(`error ${e}`) });
+	}
+	goToScan() {
+		const { navigate } = this.props.navigation;
+		return navigate('ScanScreen')
 	}
 	render() {
 		const { banners } = this.state;
@@ -66,10 +69,7 @@ class IndexScreen extends Component {
 				/>
 				<ScrollView style={styles.container}>
 					<Carousel style={styles.carouselBox} banners={banners} />
-					<View>
-						<Image style={styles.item} source={{ uri: 'https://raw.githubusercontent.com/ab-inbev/APAC_Yedian_Wechat/master/src/img/activity/0518.jpg?token=AGY_lZzDWsgr2ZIweyEWwl8qjtcQsvTyks5ZaY8SwA%3D%3D' }} />
-					</View>
-					<Text>精选</Text>
+					<Button title='扫码核销' onPress={this.goToScan.bind(this)}/>
 				</ScrollView>
 			</View>
 		);
@@ -81,10 +81,11 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		height: Dimensions.get('window').height - 45,
-		backgroundColor: '#cccccc',
+		backgroundColor: '#ffffff',
 		flexDirection: 'column'
 	},
 	item: {
+		height: Dimensions.get('window').width * 5 / 8,
 		flex: 1
 	}
 });

@@ -16,8 +16,8 @@ import IndexScreen from './routers/IndexScreen';
 import UserScreen from './routers/UserScreen';
 import ListScreen from './routers/ListScreen';
 import CommunityScreen from './routers/CommunityScreen';
+import Search from './routers/Search';
 
-alert()
 
 const options = {
   Index: {
@@ -77,6 +77,9 @@ const App = StackNavigator(
     },
     Login: {
       screen: Login,
+    },
+    Search: {
+      screen: Search
     }
   },
   {

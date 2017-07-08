@@ -15,7 +15,7 @@ class UserScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
 		tabBarLabel: '我的',
 		tabBarIcon: ({ tintColor }) => {
-			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF14D': 'uniF14E';
+			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF14D' : 'uniF14E';
 			return (
 				<Text style={{ fontFamily: 'ionicons', fontSize: 20, color: tintColor }}>
 					{Icon(icon)}
@@ -35,11 +35,14 @@ class UserScreen extends Component {
 					showHideTransition={'fade'}
 					networkActivityIndicatorVisible={true}
 				/>
-				<Header title='我的'/>
+				<View style={styles.header}>
+					<Image style={styles.headerImage} source={require('./images/user-bg.jpg')} />
+					<View style={styles.head}>
+						<Image style={styles.headImage} source={{ uri: 'https://wx.qlogo.cn/mmopen/4ONCBWepv1hAaG3ehdRNkkFI91qZ9qYvvJII7iaPOicblSoLsLibiaHSQbbpECLV5ciaP2IsIviaiaHUcokkPyE6iawFzdZtBKficLkjT/0' }} />
+					</View>
+				</View>
 				<View style={styles.container}>
-					<ScrollView>
-						<Text>精选</Text>
-					</ScrollView>
+					<Text>精选</Text>
 				</View>
 			</View>
 		);
@@ -51,8 +54,34 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 		backgroundColor: '#19191d'
 	},
+	header: {
+		position: 'relative',
+	},
+	headerImage: {
+		width: Dimensions.get('window').width,
+		height: Dimensions.get('window').width * 4 / 7,
+		resizeMode: 'cover'
+	},
+	head: {
+		width: 72,
+		height: 72,
+		paddingTop: 2,
+		paddingRight: 2,
+		paddingBottom: 2,
+		paddingLeft: 2,
+		left: Dimensions.get('window').width / 2 - 34,
+		top: Dimensions.get('window').width * 4 / 7 / 2 - 34,
+		position: 'absolute',
+		backgroundColor: '#f051db',
+		borderRadius: 34,
+	},
+	headImage: {
+		width: 68,
+		height: 68,
+		borderRadius: 34,
+	},
 	container: {
-		height: Dimensions.get('window').height-112,
+		height: Dimensions.get('window').height - 112,
 		backgroundColor: '#ffffff'
 	}
 });

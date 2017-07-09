@@ -41,6 +41,7 @@
 		DCC7D4611F0FDA35003D233D /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCC7D45F1F0FDA35003D233D /* ionicons.ttf */; };
 		DCC7D4621F0FDA35003D233D /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCC7D45F1F0FDA35003D233D /* ionicons.ttf */; };
 		DCC7D4631F0FDA35003D233D /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCC7D45F1F0FDA35003D233D /* ionicons.ttf */; };
+		DCDA92801F125829004F98D9 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = DCDA927F1F125829004F98D9 /* bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +270,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9EEC6479859844E8AC301CD6 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
 		DCC7D45F1F0FDA35003D233D /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ionicons.ttf; path = "../../ab-inbev/APAC_Yedian_H5_React/src/icons/fonts/ionicons.ttf"; sourceTree = "<group>"; };
+		DCDA927F1F125829004F98D9 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +406,7 @@
 		13B07FAE1A68108700A75B9A /* app */ = {
 			isa = PBXGroup;
 			children = (
+				DCDA927F1F125829004F98D9 /* bundle */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -880,6 +883,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDA92801F125829004F98D9 /* bundle in Resources */,
 				DCC7D4601F0FDA35003D233D /* ionicons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,

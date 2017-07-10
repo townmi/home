@@ -38,39 +38,46 @@ const options = {
 };
 
 const Home = Platform.OS === 'ios' ? TabNavigator(options, {
-    initialRouteName: 'Index',
-    tabBarPosition: 'bottom',
-    animationEnabled: false,
-    swipeEnabled: true,
-    order: ['Index', 'List', 'Community', 'User'],
-    tabBarOptions: {
-      activeTintColor: 'rgba(255, 255, 255, 1)',
-      inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
-      labelStyle: {
-        fontSize: 12,
-      },
-      style: {
-        paddingBottom: 3,
-        paddingTop: 3,
-        backgroundColor: '#19191d',
-      },
+  initialRouteName: 'Index',
+  tabBarPosition: 'bottom',
+  animationEnabled: false,
+  swipeEnabled: true,
+  order: ['Index', 'List', 'Community', 'User'],
+  tabBarOptions: {
+    activeTintColor: 'rgba(255, 255, 255, 1)',
+    inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+    labelStyle: {
+      fontSize: 12,
+    },
+    style: {
+      paddingBottom: 3,
+      paddingTop: 3,
+      backgroundColor: '#19191d',
+    },
+  }
+}) : TabNavigator(options, {
+  initialRouteName: 'Index',
+  tabBarPosition: 'bottom',
+  animationEnabled: false,
+  swipeEnabled: true,
+  order: ['Index', 'List', 'Community', 'User'],
+  tabBarOptions: {
+    activeTintColor: 'rgba(255, 255, 255, 1)',
+    inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+    labelStyle: {
+      fontSize: 12,
+    },
+    style: {
+      paddingBottom: 3,
+      paddingTop: 3,
+      backgroundColor: '#19191d',
+    },
+    indicatorStyle: {
+      // backgroundColor: 'red'
+      opacity: 0
     }
-  }) : DrawerNavigator(options, {
-      initialRouteName: 'Index',
-      order: ['Index', 'User'],
-      contentOptions: {
-        activeTintColor: '#ffffff',
-        activeBackgroundColor: 'gray',
-        inactiveTintColor: '#ffffff',
-        style: {
-          marginVertical: 0,
-        }
-      },
-      drawerWidth: Dimensions.get('window').width * 2 / 3,
-      style: {
-        paddingTop: 0,
-      }
-    });
+  }
+});
 
 
 const App = StackNavigator(

@@ -6,6 +6,7 @@ import {
 	StyleSheet,
 	StatusBar,
 	ScrollView,
+	Platform,
 	Dimensions
 } from 'react-native';
 import Icon from "../../assets/icons/icons";
@@ -13,7 +14,23 @@ import Header from '../../components/Header';
 
 class UserScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
-		tabBarLabel: '我的',
+		tabBarLabel: ({ tintColor }) => {
+			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF14D' : 'uniF14E';
+			if (Platform.OS === 'ios') {
+				return '我的';
+			} else {
+				return (
+					<View style={{ alignItems: 'center' }}>
+						<Text style={{ fontFamily: 'ionicons', fontSize: 22, color: tintColor }}>
+							{Icon(icon)}
+						</Text>
+						<Text style={{ color: tintColor, fontSize: 16 }}>
+							我的
+					</Text>
+					</View>
+				)
+			}
+		},
 		tabBarIcon: ({ tintColor }) => {
 			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF14D' : 'uniF14E';
 			return (

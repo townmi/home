@@ -7,7 +7,8 @@ import {
 	StyleSheet,
 	StatusBar,
 	ScrollView,
-	Dimensions
+	Dimensions,
+	Platform
 } from 'react-native';
 import Carousel from '../../components/Carousel'
 import Header from '../../components/Header';
@@ -15,8 +16,23 @@ import Icon from "../../assets/icons/icons";
 
 class IndexScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
-		tabBarLabel: '精选',
-		title: '精选',
+		tabBarLabel: ({ tintColor }) => {
+			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF13C' : 'uniF145';
+			if (Platform.OS === 'ios') {
+				return '精选';
+			} else {
+				return (
+					<View style={{ alignItems: 'center' }}>
+						<Text style={{ fontFamily: 'ionicons', fontSize: 22, color: tintColor }}>
+							{Icon(icon)}
+						</Text>
+						<Text style={{ color: tintColor, fontSize: 16 }}>
+							精选
+					</Text>
+					</View>
+				)
+			}
+		},
 		tabBarIcon: ({ tintColor }) => {
 			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF13C' : 'uniF145';
 			return (
@@ -69,7 +85,7 @@ class IndexScreen extends Component {
 				/>
 				<ScrollView style={styles.container}>
 					<Carousel style={styles.carouselBox} banners={banners} />
-					<Button title='扫码核销' onPress={this.goToScan.bind(this)}/>
+					<Button title='扫码核销' onPress={this.goToScan.bind(this)} />
 				</ScrollView>
 			</View>
 		);

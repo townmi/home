@@ -62,7 +62,7 @@ class Carousel extends Component {
 	}
 	render() {
 		return (
-			<View>
+			<View style={styles.container}>
 				<Swiper autoplay={true} loadMinimal loadMinimalSize={1} style={styles.wrapper} height={width * 4 / 7}
 					dot={<View style={{ backgroundColor: 'rgba(0,0,0,.2)', width: 5, height: 5, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3 }} />}
 					activeDot={<View style={{ backgroundColor: '#000', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3 }} />}
@@ -84,6 +84,10 @@ class Carousel extends Component {
 };
 
 const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+    	marginBottom: 10
+	},
 	wrapper: {
 	},
 	slide: {

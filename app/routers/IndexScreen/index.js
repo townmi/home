@@ -14,7 +14,8 @@ import {
 
 import Carousel from '../../components/Carousel';
 import Header from '../../components/Header';
-import Icon from "../../assets/icons/icons";
+import Icon from '../../assets/icons/icons';
+import ViewCell from '../../components/ViewCell';
 
 class IndexScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
@@ -151,6 +152,7 @@ class IndexScreen extends Component {
 								})
 							}
 						</View>
+						<ViewCell/>
 				</ScrollView>
 			</View>
 		);

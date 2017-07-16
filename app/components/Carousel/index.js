@@ -16,7 +16,7 @@ const Slide = props => {
 		<Image resizeMode='stretch' onLoad={props.loadHandle.bind(null, props.i)} style={styles.image} source={{ uri: props.uri }} />
 		{
 			!props.loaded && <View style={styles.loadingView}>
-				<Image style={styles.loadingImage} source={loading} />
+				<Image style={styles.loadingImage} source={ loading } />
 			</View>
 		}
 	</View>)
@@ -36,7 +36,7 @@ class Carousel extends Component {
 		let imgList = [], loadQueue = [];
 		banners.forEach((cell) => {
 			imgList = [],
-			loadQueue = []
+				loadQueue = []
 		}, this);
 		this.setState({
 			imgList,
@@ -97,11 +97,9 @@ const styles = StyleSheet.create({
 		backgroundColor: 'transparent'
 	},
 	image: {
-		width: width,
-		height: width * 4 / 7,
 		flex: 1,
-		backgroundColor: 'red',
-		resizeMode:'cover'
+		backgroundColor: 'transparent',
+		resizeMode: 'cover'
 	},
 	loadingView: {
 		position: 'absolute',
@@ -115,8 +113,8 @@ const styles = StyleSheet.create({
 	},
 
 	loadingImage: {
-		width: 60,
-		height: 60
+		width: 30,
+		height: 30
 	}
 });
 

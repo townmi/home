@@ -35,7 +35,7 @@ class Carousel extends Component {
 		let imgList = [], loadQueue = [];
 		banners.forEach((cell) => {
 			imgList = [],
-				loadQueue = []
+			loadQueue = []
 		}, this);
 		this.setState({
 			imgList,
@@ -45,8 +45,8 @@ class Carousel extends Component {
 	componentWillReceiveProps(nextProps) {
 		const { banners } = nextProps;
 		const imgList = [
-			'https://raw.githubusercontent.com/ab-inbev/APAC_Yedian_Wechat/master/src/img/activity/0518.jpg?token=AGY_lZzDWsgr2ZIweyEWwl8qjtcQsvTyks5ZaY8SwA%3D%3D',
-			'https://raw.githubusercontent.com/ab-inbev/APAC_Yedian_Wechat/master/src/img/activity/0601.jpg?token=AGY_lZbXMRbtYDHuQE8uUw2rRFiFDNBIks5ZaY87wA%3D%3D'
+			'https://cdn.pixabay.com/photo/2017/06/12/20/41/drop-of-water-2396748_960_720.jpg',
+			'https://cdn.pixabay.com/photo/2014/03/11/17/03/waves-circles-285359_640.jpg'
 		], loadQueue = [0, 0];
 		this.setState({
 			imgList,
@@ -86,7 +86,7 @@ class Carousel extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-    	marginBottom: 10
+    	// marginBottom: 10
 	},
 	wrapper: {
 	},

@@ -125,9 +125,9 @@ class ScanScreen extends Component {
 								<View style={styles.container}>
 									<View style={styles.titleContainer}>
 										<View style={styles.leftContainer}>
-											<TouchableOpacity activeOpacity={1} onPress={this._goBack}>
-												<Text style={{ fontFamily: 'ionicons', fontSize: 20, color: '#ffffff' }}>
-													{Icon('uniF155')}
+											<TouchableOpacity activeOpacity={1} onPress={this._goBack} style={{paddingLeft: 10}}>
+												<Text style={{ fontFamily: 'ionicons', fontSize: 20, color: '#ffffff', transform: [{rotate: '180deg'}] }}>
+													{Icon('uniF14F')}
 												</Text>
 											</TouchableOpacity>
 										</View>
@@ -142,7 +142,7 @@ class ScanScreen extends Component {
 											opacity: 1,
 											height: this.state.animatedHeight.interpolate({
 												inputRange: [0, 1],
-												outputRange: [0, 196]
+												outputRange: [0, 200]
 											})
 										}]}>
 										</Animated.Image>

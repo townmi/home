@@ -96,7 +96,7 @@ const App = StackNavigator(
     }
   },
   {
-    mode: 'modal',
+    mode: 'card',
     headerMode: 'none'
   }
 );

@@ -3,6 +3,7 @@ import {
 	View,
 	Text,
 	Image,
+	TouchableHighlight,
 	Button,
 	StyleSheet,
 	StatusBar,
@@ -10,7 +11,8 @@ import {
 	Dimensions,
 	Platform
 } from 'react-native';
-import Carousel from '../../components/Carousel'
+
+import Carousel from '../../components/Carousel';
 import Header from '../../components/Header';
 import Icon from "../../assets/icons/icons";
 
@@ -45,10 +47,51 @@ class IndexScreen extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			banners: []
+			banners: [],
+			sections: [
+				{
+					label: '玩乐',
+					icon: 'uniF15F',
+					action: () => {
+						alert(1);
+					}
+				},
+				{
+					label: '音乐',
+					icon: 'uniF161',
+					action: () => {
+						alert(1);
+					}
+				},
+				{
+					label: '酒饮',
+					icon: 'uniF15E',
+					action: () => {
+						alert(1);
+					}
+				},
+				{
+					label: '派对',
+					icon: 'uniF162',
+					action: () => {
+						alert(1);
+					}
+				},
+				{
+					label: '潮流',
+					icon: 'uniF160',
+					action: () => {
+						alert(1);
+					}
+				}
+			]
 		}
+	}
+
+	componentWillMount() {
 		this.fetchBanner();
 	}
+
 	fetchBanner() {
 		const self = this;
 		const init = {
@@ -58,7 +101,7 @@ class IndexScreen extends Component {
 				'Content-Type': 'application/json'
 			}
 		};
-		fetch('https://raw.githubusercontent.com/ab-inbev/APAC_Yedian_H5_React/master/mockData/banner.json?token=AGY_lcpMvfonOPyiNufNF_tk9hM6ZYFJks5ZaYfmwA%3D%3D', init)
+		fetch('https://raw.githubusercontent.com/ab-inbev/APAC_Yedian_H5_React/Staging/mockData/banner.json?token=AGY_lXGzY78Gtc81OLPsV27dA_KeuIu1ks5ZczOqwA%3D%3D', init)
 			.then((response) => response.json())
 			.then((responseJson) => {
 				self.setState({
@@ -67,12 +110,9 @@ class IndexScreen extends Component {
 			})
 			.catch(e => { console.log(`error ${e}`) });
 	}
-	goToScan() {
-		const { navigate } = this.props.navigation;
-		return navigate('ScanScreen')
-	}
+	
 	render() {
-		const { banners } = this.state;
+		const { banners, sections } = this.state;
 		return (
 			<View style={styles.box}>
 				<StatusBar
@@ -84,8 +124,21 @@ class IndexScreen extends Component {
 					showHideTransition={'fade'}
 				/>
 				<ScrollView style={styles.container}>
-					<Carousel style={styles.carouselBox} banners={banners} />
-					<Button title='扫码核销' onPress={this.goToScan.bind(this)} />
+					  <Carousel style={styles.carouselBox} banners={banners} />
+						<View style={styles.sections}>
+							{
+								sections.map((cell, index) => {
+									return (
+										<TouchableHighlight onPress={cell.action} style={styles.section} underlayColor='#1c2437' key={index}>
+											<View>
+												<Text style={styles.sectionIcon}>{Icon(cell.icon)}</Text>
+												<Text style={styles.sectionTxt}>{cell.label}</Text>
+											</View>
+										</TouchableHighlight>
+									)
+								})
+							}
+						</View>
 				</ScrollView>
 			</View>
 		);
@@ -100,9 +153,31 @@ const styles = StyleSheet.create({
 		backgroundColor: '#ffffff',
 		flexDirection: 'column'
 	},
-	item: {
+	carouselBox: {
 		height: Dimensions.get('window').width * 5 / 8,
-		flex: 1
+		overflow: 'hidden',
+	},
+	sections: {
+		paddingTop: 12,
+		paddingBottom: 12,
+		flexDirection: 'row',
+		backgroundColor: '#1c2437'
+	},
+	section: {
+		flex: 1,
+		alignItems: 'center'
+	},
+	sectionIcon: {
+		fontFamily: 'ionicons',
+		color: '#ffffff',
+		fontSize: 18,
+		textAlign: 'center'
+	},
+	sectionTxt: {
+		marginTop: 5,
+		color: '#ffffff',
+		fontSize: 14,
+		textAlign: 'center'
 	}
 });
 

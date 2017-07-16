@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import {
 	View,
 	Text,
+	VirtualizedList,
+	ListView,
+	TouchableHighlight,
 	Image,
 	StyleSheet,
 	StatusBar,
 	ScrollView,
 	Platform,
-	Dimensions
+	Dimensions,
+	Linking
 } from 'react-native';
 import Icon from "../../assets/icons/icons";
 import Header from '../../components/Header';
+import ListCell from '../../components/ListCell';
 
 class UserScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
@@ -40,6 +45,25 @@ class UserScreen extends Component {
 			)
 		},
 	});
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			keys: [
+				{
+					title: 'abcd'
+				},
+				{
+					title: 'abcd2'
+				}
+			]
+		};
+	}
+
+	goToScan() {
+		const { navigate } = this.props.navigation;
+		return navigate('ScanScreen')
+	}
 	render() {
 		return (
 			<View style={styles.box}>
@@ -59,7 +83,56 @@ class UserScreen extends Component {
 					</View>
 				</View>
 				<View style={styles.container}>
-					<Text>精选</Text>
+					<View style={styles.gap}></View>
+					<ListCell list={[
+						{
+							action: this.goToScan.bind(this),
+							label: '手机',
+							leftIcon: 'uniF15D',
+							rightIcon: 'uniF14F'
+						},
+						{
+							action: this.goToScan.bind(this),
+							label: '我的订单',
+							leftIcon: 'uniF156',
+							rightIcon: 'uniF14F'
+						},
+						{
+							action: this.goToScan.bind(this),
+							label: '我的卡券',
+							leftIcon: 'uniF150',
+							rightIcon: 'uniF14F'
+						}
+					]} />
+					<View style={styles.gap}></View>
+					<ListCell list={[
+						{
+							action: () => {
+								Linking.canOpenURL('tel:' + '18505102468').then(supported => {
+									if (!supported) {
+										console.log('Can\'t handle url: ' + '18505102468');
+									} else {
+										return Linking.openURL('tel:' + '18505102468');
+									}
+								}).catch(err => console.error('An error occurred', err));
+							},
+							label: '客服热线',
+							leftIcon: 'uniF15A',
+							rightIcon: 'uniF14F'
+						},
+						{
+							action: this.goToScan.bind(this),
+							label: '隐私政策',
+							leftIcon: 'uniF158',
+							rightIcon: 'uniF14F'
+						},
+						{
+							action: this.goToScan.bind(this),
+							label: '邀请好友',
+							leftIcon: 'uniF154',
+							rightIcon: 'uniF14F'
+						}
+					]} />
 				</View>
 			</View>
 		);
@@ -76,7 +149,7 @@ const styles = StyleSheet.create({
 	},
 	headerImage: {
 		width: Dimensions.get('window').width,
-		height: Dimensions.get('window').width * 4 / 7,
+		height: Dimensions.get('window').width * 1 / 2,
 		resizeMode: 'cover'
 	},
 	head: {
@@ -87,7 +160,7 @@ const styles = StyleSheet.create({
 		paddingBottom: 2,
 		paddingLeft: 2,
 		left: Dimensions.get('window').width / 2 - 34,
-		top: Dimensions.get('window').width * 4 / 7 / 2 - 34,
+		top: Dimensions.get('window').width * 1 / 4 - 34,
 		position: 'absolute',
 		backgroundColor: '#f051db',
 		borderRadius: 34,
@@ -99,7 +172,11 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		height: Dimensions.get('window').height - 112,
-		backgroundColor: '#ffffff'
+		backgroundColor: '#e8e8e8'
+	},
+	gap: {
+		height: 10,
+		backgroundColor: '#e8e8e8'
 	}
 });
 

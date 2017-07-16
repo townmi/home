@@ -25,10 +25,10 @@ class IndexScreen extends Component {
 			} else {
 				return (
 					<View style={{ alignItems: 'center' }}>
-						<Text style={{ fontFamily: 'ionicons', fontSize: 22, color: tintColor }}>
+						<Text style={{ fontFamily: 'ionicons', fontSize: 18, color: tintColor }}>
 							{Icon(icon)}
 						</Text>
-						<Text style={{ color: tintColor, fontSize: 16 }}>
+						<Text style={{ color: tintColor, fontSize: 14 }}>
 							精选
 					</Text>
 					</View>
@@ -128,10 +128,22 @@ class IndexScreen extends Component {
 						<View style={styles.sections}>
 							{
 								sections.map((cell, index) => {
+									let sectionIcon = {
+										height: 20,
+										lineHeight: 16,
+										fontFamily: 'ionicons',
+										color: '#ffffff',
+										fontSize: 18,
+										textAlign: 'center'
+									}
+									if(index === (sections.length - 1)) {
+										Object.assign(sectionIcon, {fontSize: 12})
+									}
+									
 									return (
 										<TouchableHighlight onPress={cell.action} style={styles.section} underlayColor='#1c2437' key={index}>
 											<View>
-												<Text style={styles.sectionIcon}>{Icon(cell.icon)}</Text>
+												<Text style={sectionIcon}>{Icon(cell.icon)}</Text>
 												<Text style={styles.sectionTxt}>{cell.label}</Text>
 											</View>
 										</TouchableHighlight>
@@ -166,12 +178,6 @@ const styles = StyleSheet.create({
 	section: {
 		flex: 1,
 		alignItems: 'center'
-	},
-	sectionIcon: {
-		fontFamily: 'ionicons',
-		color: '#ffffff',
-		fontSize: 18,
-		textAlign: 'center'
 	},
 	sectionTxt: {
 		marginTop: 5,

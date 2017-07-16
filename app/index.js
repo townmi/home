@@ -68,8 +68,8 @@ const Home = Platform.OS === 'ios' ? TabNavigator(options, {
       fontSize: 12,
     },
     style: {
-      paddingBottom: 3,
-      paddingTop: 3,
+      paddingBottom: 0,
+      paddingTop: 0,
       backgroundColor: '#19191d',
     },
     indicatorStyle: {

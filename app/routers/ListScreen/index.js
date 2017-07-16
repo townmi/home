@@ -22,10 +22,10 @@ class ListScreen extends Component {
 			} else {
 				return (
 					<View style={{ alignItems: 'center' }}>
-						<Text style={{ fontFamily: 'ionicons', fontSize: 22, color: tintColor }}>
+						<Text style={{ fontFamily: 'ionicons', fontSize: 18, color: tintColor }}>
 							{Icon(icon)}
 						</Text>
-						<Text style={{ color: tintColor, fontSize: 16 }}>
+						<Text style={{ color: tintColor, fontSize: 14 }}>
 							预订
 					</Text>
 					</View>

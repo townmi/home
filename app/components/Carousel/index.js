@@ -3,6 +3,7 @@ import {
 	View,
 	Text,
 	Dimensions,
+	TouchableWithoutFeedback,
 	Image,
 	StyleSheet
 } from 'react-native';
@@ -64,6 +65,7 @@ class Carousel extends Component {
 		return (
 			<View style={styles.container}>
 				<Swiper autoplay={true} loadMinimal loadMinimalSize={1} style={styles.wrapper} height={width * 4 / 7}
+					key={Math.random()}
 					dot={<View style={{ backgroundColor: 'rgba(0,0,0,.2)', width: 5, height: 5, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3 }} />}
 					activeDot={<View style={{ backgroundColor: '#000', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3 }} />}
 					paginationStyle={{
@@ -86,7 +88,6 @@ class Carousel extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-    	// marginBottom: 10
 	},
 	wrapper: {
 	},
@@ -96,8 +97,10 @@ const styles = StyleSheet.create({
 		backgroundColor: 'transparent'
 	},
 	image: {
+		width: width,
+		height: width * 4 / 7,
 		flex: 1,
-		backgroundColor: 'transparent',
+		backgroundColor: 'red',
 		resizeMode:'cover'
 	},
 	loadingView: {

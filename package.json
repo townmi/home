@@ -9,7 +9,7 @@
     "test": "jest",
     "e2e": "detox build && detox test",
     "bundle-ios": "react-native bundle --entry-file index.ios.js --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle",
-    "bundle-android": "react-native bundle --entry-file index.android.js --platform android --dev false --bundle-output ./android/bundle/index.android.jsbundle --assets-dest ./android/bundle",
+    "bundle-android": "react-native bundle --entry-file index.android.js --bundle-output ./android/app/src/main/assets/index.android.jsbundle --platform android --assets-dest ./android/app/src/main/res/ --dev false",
     "icons": "python ~/github/home/app/assets/icons/iconfont-mapper.py ~/github/home/app/assets/icons/ionicons.ttf ~/github/home/app/assets/icons/icons.js"
   },
   "dependencies": {

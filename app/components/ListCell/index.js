@@ -63,31 +63,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff'
   },
   leftIcon: {
+    width: 30,
     height: 42,
     paddingTop: 13,
     lineHeight: 18,
     fontSize: 18,
-    flexGrow: 1,
     color: '#333333',
     fontFamily: 'ionicons',
   },
   rightIcon: {
+    width: 24,
     height: 42,
     paddingTop: 15,
     lineHeight: 12,
     fontSize: 12,
-    flexGrow: 1,
     color: '#333333',
     fontFamily: 'ionicons',
-    // backgroundColor: '#ffffff',
   },
   btnTxt: {
-    flexGrow: 15,
+    flex: 1,
     height: 42,
     paddingTop: 13,
     lineHeight: 16,
     color: '#333333',
-    // backgroundColor: '#ffffff',
     fontSize: 16
   }
 })

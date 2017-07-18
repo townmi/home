@@ -18,7 +18,7 @@ class ListScreen extends Component {
 		tabBarLabel: ({ tintColor }) => {
 			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF146': 'uniF14C';
 			if (Platform.OS === 'ios') {
-				return '预订';
+				return '订单汇总';
 			} else {
 				return (
 					<View style={{ alignItems: 'center' }}>

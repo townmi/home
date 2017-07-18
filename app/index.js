@@ -14,9 +14,9 @@ import { StackNavigator, TabNavigator, DrawerNavigator, DrawerView, DrawerItems 
 import Login from './routers/Login';
 
 import IndexScreen from './routers/IndexScreen';
-import UserScreen from './routers/UserScreen';
+import VenuesInfoScreen from './routers/VenuesInfoScreen';
 import ListScreen from './routers/ListScreen';
-import CommunityScreen from './routers/CommunityScreen';
+// import CommunityScreen from './routers/CommunityScreen';
 
 import Search from './routers/Search';
 import ScanScreen from './routers/ScanScreen';
@@ -26,14 +26,11 @@ const options = {
   Index: {
     screen: IndexScreen,
   },
-  User: {
-    screen: UserScreen,
-  },
   List: {
     screen: ListScreen,
   },
-  Community: {
-    screen: CommunityScreen,
+  VenuesInfo: {
+    screen: VenuesInfoScreen,
   },
 };
 
@@ -42,7 +39,7 @@ const Home = Platform.OS === 'ios' ? TabNavigator(options, {
   tabBarPosition: 'bottom',
   animationEnabled: false,
   swipeEnabled: true,
-  order: ['Index', 'List', 'Community', 'User'],
+  order: ['Index', 'List', 'VenuesInfo'],
   tabBarOptions: {
     activeTintColor: 'rgba(255, 255, 255, 1)',
     inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
@@ -60,7 +57,7 @@ const Home = Platform.OS === 'ios' ? TabNavigator(options, {
   tabBarPosition: 'bottom',
   animationEnabled: false,
   swipeEnabled: true,
-  order: ['Index', 'List', 'Community', 'User'],
+  order: ['Index', 'List', 'VenuesInfo'],
   tabBarOptions: {
     activeTintColor: 'rgba(255, 255, 255, 1)',
     inactiveTintColor: 'rgba(255, 255, 255, 0.6)',

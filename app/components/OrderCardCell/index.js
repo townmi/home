@@ -11,7 +11,7 @@ import {
 
 import Icon from "../../assets/icons/icons";
 
-export default class ViewCell extends Component {
+export default class OrderCardCell extends Component {
   constructor(props) {
     super(props)
   }
@@ -29,12 +29,13 @@ export default class ViewCell extends Component {
 
 const styles = StyleSheet.create({
   box: {
-    width: Dimensions.get('window').width * 9 / 10,
-    marginLeft: Dimensions.get('window').width * 1 / 20,
+    width: Dimensions.get('window').width * 96 / 100,
+    marginLeft: Dimensions.get('window').width * 2 / 100,
     borderRadius: 4,
+    marginBottom: 10
   },
   image: {
-    width: Dimensions.get('window').width * 9 / 10,
+    width: Dimensions.get('window').width * 96 / 100,
     height: Dimensions.get('window').width * 4 / 9
   }
 });

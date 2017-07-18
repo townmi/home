@@ -17,12 +17,12 @@ import Icon from "../../assets/icons/icons";
 import Header from '../../components/Header';
 import ListCell from '../../components/ListCell';
 
-class UserScreen extends Component {
+class VenuesInfoScreen extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => ({
 		tabBarLabel: ({ tintColor }) => {
 			const icon = tintColor === 'rgba(255, 255, 255, 1)' ? 'uniF14D' : 'uniF14E';
 			if (Platform.OS === 'ios') {
-				return '我的';
+				return '商家管理';
 			} else {
 				return (
 					<View style={{ alignItems: 'center' }}>
@@ -180,4 +180,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default UserScreen;
+export default VenuesInfoScreen;
